@@ -31,4 +31,7 @@ Vue.component('query-message', require('./components/base/QueryMessage.vue').def
 
 const app = new Vue({
     el: '#app',
+    // component: [
+    //     'example-component'
+    // ],
 });

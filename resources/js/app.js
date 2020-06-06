@@ -23,6 +23,7 @@ Vue.component('Testing1', require('./components/Testing1.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('query-message', require('./components/base/QueryMessage.vue').default);
 
+//try commit again
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

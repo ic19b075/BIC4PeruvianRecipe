@@ -4,11 +4,7 @@
             TestHeader
         </h1>
     </header>
-    <body>
-        <h1>
-            TestBody
-        </h1>
-    </body>
+
 </template>
 
 <script>

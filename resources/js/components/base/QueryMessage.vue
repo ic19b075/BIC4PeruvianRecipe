@@ -1,11 +1,12 @@
 <template>
-    <article class="message"
-             v-bind:class="{'is-success': success, 'is-danger': fail}"
-             v-if="show()">
-        <div class="message-body">
-            {{message}}
-        </div>
-    </article>
+<!--    <article class="message"-->
+<!--             v-bind:class="{'is-success': success, 'is-danger': fail}"-->
+<!--             v-if="show()">-->
+<!--        <div class="message-body">-->
+<!--            {{message}}-->
+<!--        </div>-->
+<!--    </article>-->
+    <h1>SEARCH ENGREDIENT QUERY</h1>
 </template>
 
 <script>

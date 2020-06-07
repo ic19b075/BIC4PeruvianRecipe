@@ -2109,11 +2109,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "show_recipe.vue",
   data: function data() {
     return {
-      recipes: []
+      recipes: [],
+      ingredients: []
     };
   },
   created: function created() {
@@ -2123,8 +2161,13 @@ __webpack_require__.r(__webpack_exports__);
     axios.get('./list/recipe').then(function (response) {
       return _this.recipes = response.data;
     });
+    axios.get('./list/ingredient').then(function (response) {
+      return _this.ingredients = response.data;
+    });
   }
 });
+
+function comp_ing_rec() {}
 
 /***/ }),
 
@@ -20542,29 +20585,66 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "table-container is-fullwidth" }, [
-    _c("h1", [_vm._v("\n        All Recipes\n    ")]),
-    _vm._v(" "),
-    _c("table", { staticClass: "table is-fullwidth is-hoverable" }, [
-      _vm._m(0),
+  return _c(
+    "div",
+    { staticClass: "table-container is-fullwidth" },
+    [
+      _c("h1", [_vm._v("\n        All Recipes\n    ")]),
       _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.recipes, function(recipe) {
-          return _c("tr", { key: recipe.id }, [
-            _c("th", [_vm._v(_vm._s(recipe.id))]),
+      _vm._l(_vm.recipes, function(recipe) {
+        return _c("div", { key: recipe.id }, [
+          _c("h1", [_vm._v("\n            Rezept\n        ")]),
+          _vm._v(" "),
+          _c("table", { staticClass: "table is-fullwidth is-hoverable" }, [
+            _vm._m(0, true),
             _vm._v(" "),
-            _c("th", [_vm._v(_vm._s(recipe.slug))]),
-            _vm._v(" "),
-            _c("th", [_vm._v(_vm._s(recipe.name))]),
-            _vm._v(" "),
-            _c("th", [_vm._v(_vm._s(recipe.description))])
+            _c("tbody", [
+              _c("tr", [
+                _c("th", [_vm._v(_vm._s(recipe.id))]),
+                _vm._v(" "),
+                _c("th", [_vm._v(_vm._s(recipe.slug))]),
+                _vm._v(" "),
+                _c("th", [_vm._v(_vm._s(recipe.name))]),
+                _vm._v(" "),
+                _c("th", [_vm._v(_vm._s(recipe.description))])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("h1", [_vm._v("\n        Zutaten\n    ")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("table", { staticClass: "table is-fullwidth is-hoverable" }, [
+              _vm._m(1, true),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.ingredients, function(ingredient) {
+                  return _c("tr", { key: ingredient.id }, [
+                    _c("th", [_vm._v(_vm._s(ingredient.id))]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v(_vm._s(ingredient.name))]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v(_vm._s(ingredient.description))]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v(_vm._s(ingredient.unit))]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v(_vm._s(ingredient.quantity))]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v(_vm._s(ingredient.slug))]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v(_vm._s(ingredient.recipe_id))])
+                  ])
+                }),
+                0
+              )
+            ])
           ])
-        }),
-        0
-      )
-    ])
-  ])
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
@@ -20580,6 +20660,28 @@ var staticRenderFns = [
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
         _c("th", [_vm._v("Beschreibung")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { attrs: { cass: "title is-5" } }, [
+        _c("th", [_vm._v("ID")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Beschreibung")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Eiheit")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Menge")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("slug")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Recipe_id")])
       ])
     ])
   }

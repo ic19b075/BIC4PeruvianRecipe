@@ -1,28 +1,29 @@
 <template>
-    <div>
+    <div class="table-container is-fullwidth">
         <h1>
             All Ingredients
         </h1>
-       <table>
+       <table class="table is-fullwidth is-hoverable">
         <thead>
-            <tr>
+            <tr cass="title is-6">
                 <th>ID</th>
                 <th>Name</th>
                 <th>Beschreibung</th>
                 <th>Eiheit</th>
                 <th>Menge</th>
                 <th>slug</th>
+                <th>Recipe_id</th>
             </tr>
         </thead>
         <tbody>
-
-            <tr>
-                <th>1</th>
-                <th>Blat</th>
-                <th>ist grün</th>
-                <th>cm</th>
-                <th>12</th>
-                <th>ja</th>
+            <tr v-for="ingredient in ingredients" :key="ingredient.id">
+                <th>{{ingredient.id}}</th>
+                <th>{{ingredient.name}}</th>
+                <th>{{ingredient.description}}</th>
+                <th>{{ingredient.unit}}</th>
+                <th>{{ingredient.quantity}}</th>
+                <th>{{ingredient.slug}}</th>
+                <th>{{ingredient.recipe_id}}</th>
             </tr>
         </tbody>
         </table>
@@ -31,8 +32,19 @@
 
 <script>
     export default {
-        name: "show_ingredient"
+        name: "show_ingredient",
+        data(){
+            return{
+                ingredients:[]
+            }
+        },
+        created() {
+            console.log("Component show_ingredient eingebunden");
+            axios.get('./list/ingredient')
+                .then(response => this.ingredients = response.data);
+        }
     }
+
 </script>
 
 <style scoped>

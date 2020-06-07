@@ -73,9 +73,11 @@
         created() {
             //console.log("Component show_recipe eingebunden");
             axios.get('./list/recipe')
-                .then(response => this.recipes = response.data);
+                .then(response => this.recipes = response.data)
+                .catch(e => console.log(e));
             axios.get('./list/ingredient')
-                .then(response => this.ingredients = response.data);
+                .then(response => this.ingredients = response.data)
+                .catch(e => console.log(e));
         },
         methods:{
             filtering_all(inPut, filterKey){

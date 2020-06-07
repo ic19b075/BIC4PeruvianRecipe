@@ -2157,17 +2157,31 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    console.log("Component show_recipe eingebunden");
+    //console.log("Component show_recipe eingebunden");
     axios.get('./list/recipe').then(function (response) {
       return _this.recipes = response.data;
     });
     axios.get('./list/ingredient').then(function (response) {
       return _this.ingredients = response.data;
     });
+  },
+  methods: {
+    filtering_all: function filtering_all(inPut, filterKey) {
+      var list = [];
+
+      for (var i = 0; i < inPut.length; i++) {
+        if (inPut[i].recipe_id == filterKey) {
+          list.push(inPut[i]);
+        }
+      }
+
+      ; //console.log("Funktion wurde druchlaufen")
+      //console.log(list);
+
+      return list;
+    }
   }
 });
-
-function comp_ing_rec() {}
 
 /***/ }),
 
@@ -20619,7 +20633,9 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "tbody",
-                _vm._l(_vm.ingredients, function(ingredient) {
+                _vm._l(_vm.filtering_all(_vm.ingredients, recipe.id), function(
+                  ingredient
+                ) {
                   return _c("tr", { key: ingredient.id }, [
                     _c("th", [_vm._v(_vm._s(ingredient.id))]),
                     _vm._v(" "),
@@ -32883,6 +32899,7 @@ Vue.component('show_recipe', __webpack_require__(/*! ./components/show_recipe */
 Vue.component('show_ingredient', __webpack_require__(/*! ./components/show_ingredient */ "./resources/js/components/show_ingredient.vue")["default"]);
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('query-message', __webpack_require__(/*! ./components/base/QueryMessage.vue */ "./resources/js/components/base/QueryMessage.vue")["default"]); //try commit again
+//Vue filter fuer die Rezepte
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

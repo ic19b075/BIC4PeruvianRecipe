@@ -50,6 +50,8 @@ class IngredientController extends Controller
         $ingredient= Ingredient::create($request->validate([
             'name' => 'required',
             'description' => 'required',
+            'unit' =>'required',
+            'quantity' => 'required',
             'recipe_id' => 'required|exists:App\Recipe,id'
         ]));
         $ingredient ->{"message"} = "Zutat erfolgreich eingefügt";

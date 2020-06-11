@@ -14,6 +14,8 @@ use Illuminate\Support\Carbon;
  * @property string $name
  * @property string $description
  * @property string $slug
+ * @property string $unit
+ * @property string $quantity
  * @property int $recipe_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at

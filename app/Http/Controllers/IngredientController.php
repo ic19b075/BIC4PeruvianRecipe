@@ -47,11 +47,14 @@ class IngredientController extends Controller
      */
     public function store(Request $request)
     {
-        return Ingredient::create($request->validate([
+        $ingredient= Ingredient::create($request->validate([
             'name' => 'required',
             'description' => 'required',
             'recipe_id' => 'required|exists:App\Recipe,id'
         ]));
+        $ingredient ->{"message"} = "Zutat erfolgreich eingefügt";
+        return response($ingredient,200)
+            ->header('Content-Type','application/json');
     }
 
     /**

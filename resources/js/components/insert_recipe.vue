@@ -1,54 +1,51 @@
 <template>
-    <div class="container">
-        <div class="columns is-multiline">
-            <header class="card-header">
-                <h1 class="card-header-title is-centered">Neues Rezept</h1>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                    <!--<query-message :success="form.isSuccess()" :fail="form.isFail()"
-                                   :message="form.failMessage || form.successMessage"></query-message>-->
-                    <form @submit.prevent="submit">
-                        <div class="field">
-                            <label class="label" for="rname">Name:</label>
-                            <div class="control">
-                                <input id="rname"
-                                        v-model="form.rname"
-                                        class="input"
-                                        v-bind:class="{'is-danger':form.errors.has('rname')}"
-                                        type="text" autofocus>
-                            </div>
-                            <p class="help is-danger" v-if="form.errors.has('rname')"
-                               v-text="form.errors.get('rname')"/>
-                        </div>
-                        <div class="field">
-                            <label class="label" for="rdesc">Beschreibung:</label>
-                            <div class="control">
-                                <textarea id="rdesc" v-model="form.rdesc" class="textarea"></textarea>
-                            </div>
-                            <p class="help is-danger" v-if="form.errors.has('rname')"
-                               v-text="form.errors.get('rname')"/>
-
-                        </div>
-                        <input type="submit" class="button is-large is-primary is-outlined is-fullwidth" v-text="edit ? 'Save' : 'Post'" :disabled="loading"/>
-                    </form>
-                </div>
-            </div>
-            <div class="card-footer">
-                <footer>
-                    Ende
-                </footer>
-            </div>
-        </div>
+    <!--<div>
+        <input type="text" v-model="rform" @change="submitting()"/>
+        <input type="textarea" v-model="rform2" @change="submitting()"/>
+        <ul v-if="errors && errors.length">
+            <li v-for="error of errors">
+                 {{error.message}}
+            </li>
+        </ul>
+    </div>-->
+    <div>
+        <form v-model="rform" @submit.prevent="submitting">
+            <strong>Name:</strong>
+            <input type="text" class="form-control" v-model="rform.name">
+            <strong>Description:</strong>
+            <textarea class="form-control" v-model="rform.description"></textarea>
+            <button class="btn btn-success">Submit</button>
+        </form>
+        <ul v-if="rform.failMessage && rform.failMessage.length">
+            <li >
+                <h2>Error:</h2>{{rform.failMessage}}
+            </li>
+        </ul>
+        <pre>
+            {{output}}
+            <p>{{rform.rname}}</p>
+            <p>{{rform.rdesc}}</p>
+        </pre>
     </div>
+
+
+
+    <!--<form name="rform" onsubmit="return formValidation()" method="post">
+        <label for="rname">Name:</label><br>
+        <input type="text" id="rname" name="rname"><br>
+        <label for="rdesc">Beschreibung:</label><br>
+        <input type="text" id="rdesc" name="rdesc">
+        <input type="submit" value="Submit">
+    </form>-->
 </template>
 
 <script>
-    let form =new Form({
-        'rname':'',
-        'rdesc':'',
-        'rslug':'',
-        'rid':''
+    let rform =new Form({
+        'id':'',
+        'name':'',
+        'description':'',
+        'slug':''
+
     });
     export default {
         name: "insert_recipe.vue",
@@ -58,19 +55,77 @@
         created() {
             console.log("insert_recipe.vue ist geladen");
         },
+        //data(){
+        //    return{
+        //        edit: undefined,
+        //        form:rform,
+        //        url:'../recipie'
+        //    }
         data(){
             return{
                 edit: undefined,
-                form:form,
-                url:''
+                rform: rform,
+                url:'',
+                output:''
             }
         },
         methods:{
-            submit(){
-                if(this.edit)
-                    this.form.put(this.url);
-                else
-                    ;
+            submitting(e){
+                //e.preventDefault();
+                //let currentObj =this;
+                this.url='/recipe/';
+                console.log("name");
+                console.log(rform.name);
+                console.log("desc");
+                console.log(rform.description);
+                console.log(rform);
+
+                this.rform
+                    .post(this.url)
+                    .then((response) => {
+                        this.url = '/recipe/' + response.slug;
+                        this.rform.id = response.id;
+                        this.rform.name = response.name;
+                        this.rform.description = response.description;
+                        //this.form.category_id = response.category_id;
+                        this.form.noReset = ['id', 'title', 'body'];
+                        this.edit = true;
+                        //window.history.pushState("", "", this.url);
+                    })
+                    .catch((error)=> {
+                        console.log("Errormessage:");
+                        console.log(error);
+                        });
+
+                /*this.$axios.post(this.url,{
+                    name: rform.rname,
+                    description: rform.rdesc
+                })
+                    .then(response =>(
+                        console.log(response)
+                    ))
+                    .catch(error => (
+                        console.log(error)
+                ));*/
+
+                //if(this.edit) {
+                //    this.rform.post(this.url);
+                //}
+                //    else
+                //    ;
+            //},
+            //formValidation(){
+            //    var x = document.forms ["rform"] ["rname"].value;
+            //    var y = document.forms ["rform"] ["rdesc"].value;
+
+            //    if(x==""){
+            //        alert("Name des Rezepts muss ausgefüllt sein");
+            //        return false;
+            //    }else{}
+            //    if(y==""){
+            //        alert("Beschreibung des Rezepts muss ausgefüllt sein");
+            //        return false;
+            //    }else{this.submitting()};
             }
         }
     }

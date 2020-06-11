@@ -47,6 +47,15 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
+        /*$Recipe::create($request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]));
+
+        $Recipe->{'message'}= "Recipe successfully created!";
+        return response($Recipe,200)
+                ->header('Content-Type', 'application/json');
+        */
         return Recipe::create($request->validate([
             'name' => 'required',
             'description' => 'required'
@@ -84,10 +93,20 @@ class RecipeController extends Controller
      */
     public function update(Request $request, Recipe $recipe)
     {
+        /*if($recipe->update($request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]))){
+            return response(['message' => "Recipe successfully updated!"], 200)
+                ->header('Content-Type', 'application/json');
+        }else
+            abort('500');
+        */
         return $recipe->update($request->validate([
             'name' => 'required',
             'description' => 'required'
         ]));
+
     }
 
     /**

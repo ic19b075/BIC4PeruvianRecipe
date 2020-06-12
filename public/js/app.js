@@ -1942,25 +1942,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['title'],
   mounted: function mounted() {
@@ -2370,7 +2351,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ntable, th, td {\n    border: 1px solid black;\n}\n", ""]);
+exports.push([module.i, "\ntable, th, td {\n    border: 1px solid black;\n}\nh1 {font-size:40px; margin-bottom: 20px; color: #193d29}\nh2 {font-size:28px; text-align:center; color: cadetblue}\n", ""]);
 
 // exports
 
@@ -20610,44 +20591,16 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("h1", [_vm._v("My first VUE COMPONENT")]),
+      _c("h1", [_vm._v(" Welcome to PeruvianRecipe Task - Gruppe 6")]),
       _vm._v(" "),
-      _c("h2", [_vm._v("HEADER 2 MY COMPONENT")]),
-      _vm._v(" "),
-      _c("input"),
-      _vm._v("Beispieltext"),
-      _c("input"),
-      _vm._v(" "),
-      _c("table", [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("Month")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Savings")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", [_vm._v("January")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("$100")])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", [_vm._v("February")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("$80")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tfoot", [
-          _c("tr", [
-            _c("td", [_vm._v("Sum")]),
-            _vm._v(" "),
-            _c("td", [_vm._v("$180")])
-          ])
-        ])
+      _c("h2", [
+        _vm._v(" Martin Olesch "),
+        _c("br"),
+        _vm._v("\n         Daniel Trivicevc"),
+        _c("br"),
+        _vm._v("\n         Andreas Wolfsbauer"),
+        _c("br"),
+        _vm._v("\n         Denis Zaborov")
       ])
     ])
   }
@@ -34169,8 +34122,8 @@ var Form = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\m.olesch\PhpstormProjects\BIC4PeruvianRecipe\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\m.olesch\PhpstormProjects\BIC4PeruvianRecipe\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\FH Technikum\IE\BIC4PeruvianRecipe\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\FH Technikum\IE\BIC4PeruvianRecipe\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

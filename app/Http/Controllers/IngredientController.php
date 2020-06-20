@@ -24,9 +24,9 @@ class IngredientController extends Controller
      */
     public function index()
     {
-        $ingredient = Ingredient::all()->load('recipe');
+        $ingredients = Ingredient::all()->load('recipe');
 
-        return view('ingredient.index', compact('ingredient'));
+        return view('ingredient.index', compact('ingredients'));
     }
 
     /**
@@ -47,11 +47,16 @@ class IngredientController extends Controller
      */
     public function store(Request $request)
     {
-        return Ingredient::create($request->validate([
+        $ingredient= Ingredient::create($request->validate([
             'name' => 'required',
             'description' => 'required',
+            'unit' =>'required',
+            'quantity' => 'required',
             'recipe_id' => 'required|exists:App\Recipe,id'
         ]));
+        $ingredient ->{"message"} = "Zutat erfolgreich eingefügt";
+        return response($ingredient,200)
+            ->header('Content-Type','application/json');
     }
 
     /**

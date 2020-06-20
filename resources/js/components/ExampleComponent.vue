@@ -1,7 +1,10 @@
 <style>
     table, th, td {
         border: 1px solid black;
+
     }
+    h1 {font-size:40px; margin-bottom: 20px; color: #193d29}
+    h2 {font-size:28px; text-align:center; color: cadetblue}
 </style>
 <template>
 <!--    <div class="container">-->
@@ -21,33 +24,11 @@
 <!--        </div>-->
 <!--    </div>-->
     <div>
-        <h1>My first VUE COMPONENT</h1>
-        <h2>HEADER 2 MY COMPONENT</h2>
-        <input>Beispieltext<input>
-        <table>
-            <thead>
-            <tr>
-                <th>Month</th>
-                <th>Savings</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>January</td>
-                <td>$100</td>
-            </tr>
-            <tr>
-                <td>February</td>
-                <td>$80</td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <td>Sum</td>
-                <td>$180</td>
-            </tr>
-            </tfoot>
-        </table>
+        <h1> Welcome to PeruvianRecipe Task - Gruppe 6</h1>
+        <h2> Martin Olesch <br>
+         Daniel Trivicevc<br>
+         Andreas Wolfsbauer<br>
+         Denis Zaborov</h2>
     </div>
 </template>
 

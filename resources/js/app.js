@@ -26,6 +26,8 @@ Vue.component('show_recipe', require('./components/show_recipe').default);
 Vue.component('show_ingredient', require('./components/show_ingredient').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('query-message', require('./components/base/QueryMessage.vue').default);
+Vue.component('footer_site', require('./components/footer_site.vue').default);
+Vue.component('edit_ingredient', require('./components/edit_ingredient.vue').default);
 //try commit again
 
 

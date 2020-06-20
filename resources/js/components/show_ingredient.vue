@@ -9,7 +9,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Beschreibung</th>
-                <th>Eiheit</th>
+                <th>Einheit</th>
                 <th>Menge</th>
                 <th>slug</th>
                 <th>Recipe_id</th>
@@ -24,6 +24,9 @@
                 <th>{{ingredient.quantity}}</th>
                 <th>{{ingredient.slug}}</th>
                 <th>{{ingredient.recipe_id}}</th>
+                <td>
+                    <button class="button is-primary" @click="editIngredient(ingredient)">Edit</button>
+                </td>
             </tr>
         </tbody>
         </table>
@@ -33,9 +36,21 @@
 <script>
     export default {
         name: "show_ingredient",
-        data(){
-            return{
-                ingredients:[]
+        data() {
+            return {
+                ingredients: [],
+                ingredient: {
+                    id: '',
+                    slug: '',
+                    name: '',
+                    description: '',
+                    recipe_id: '',
+                },
+            }
+        },
+        methods : {
+            editIngredient(ingredient){
+                window.location.href = '/ingredient/' + ingredient.slug + '/edit';
             }
         },
         created() {

@@ -140,10 +140,11 @@
         @yield('content')
     </div>
 
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <small>Here comes some footer</small>
-        </div>
+    <footer>
+{{--        <div class="content has-text-centered">--}}
+{{--            <small>Here comes some footer</small>--}}
+{{--        </div>--}}
+        <footer_site></footer_site>
     </footer>
 </div>
 </body>

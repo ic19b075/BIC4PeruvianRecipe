@@ -36,7 +36,7 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Beschreibung</th>
-                        <th>Eiheit</th>
+                        <th>Einheit</th>
                         <th>Menge</th>
                         <th>slug</th>
                         <th>Recipe_id</th>

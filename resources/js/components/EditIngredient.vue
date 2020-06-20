@@ -1,7 +1,7 @@
-<template id="edit-engredient">
+<template id="edit-ingredient">
     <div class="card">
         <div class="card-header">
-            <h1 class="card-header-title is-centered"  >Hinzufügen</h1>
+            <h1 class="card-header-title is-centered"  >Edit</h1>
         </div>
         <div class="card-content">
             <form v-model="form" @submit.prevent="submit">

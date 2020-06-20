@@ -17,4 +17,10 @@
 {{--    </section>--}}
 {{--<script src="{{asset('js/app.js')}}"></script>--}}
 {{--</body>--}}
+<section class="section">
+    <div class="container">
+        <h1>Search Ingredient</h1>
+        <search_ingredient></search_ingredient>
+    </div>
+</section>
 @endsection

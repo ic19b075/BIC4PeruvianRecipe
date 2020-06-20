@@ -8,5 +8,4 @@
             <insert_ingredient></insert_ingredient>
         </div>
     </section>
-</body>
 @endsection

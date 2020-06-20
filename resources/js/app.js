@@ -28,6 +28,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('query-message', require('./components/base/QueryMessage.vue').default);
 Vue.component('footer_site', require('./components/footer_site.vue').default);
 Vue.component('edit_ingredient', require('./components/edit_ingredient.vue').default);
+Vue.component('search_ingredient', require('./components/search_ingredient.vue').default);
 //try commit again
 
 

@@ -96,9 +96,9 @@
 </script>
 
 <style scoped>
-    table, th, td {
-        border: 1px solid black;
-    }
+    /*table, th, td {*/
+    /*    border: 1px solid black;*/
+    /*}*/
     tr:hover {
         background: azure;
     }

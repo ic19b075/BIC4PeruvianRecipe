@@ -1,41 +1,77 @@
-<template id="edit-ingredient">
-    <div>
-        <h1>Ingredient details</h1>
-        <label class="bold">Ingredient id:</label>
-        <input :value="ingredient.id" readonly>
-        <br>
-        <label class="bold">Ingredient name: </label>
-        <input :value="ingredient.name">
-        <br>
-        <label class="bold">Creation date: </label>
-        <input :value="ingredient.creationDate" readonly>
-        <br>
-        <label class="bold">Ingredient quantity: </label>
-        <input :value="ingredient.quantity">
-        <br>
-        <label class="bold">Recipe id:</label>
-        <input :value="ingredient.recipeId">
-        <br>
-        <label class="bold">Date of update:</label>
-        <input :value="ingredient.updateDate">
-        <br>
-        <label class="bold">Ingredient description: </label>
-        <br>
-        <textarea rows="4" cols="50" name="description">{{ingredient.description}}</textarea>
-        <br>
-        <button>Update Ingredient</button>
+<template id="edit-engredient">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-header-title is-centered"  >Hinzufügen</h1>
+        </div>
+        <div class="card-content">
+            <form v-model="form" @submit.prevent="submit">
+                <strong>Name:</strong>
+                <input type="text" class="form-control" v-model="ingredient.name"/>
+                <strong>Description:</strong>
+                <textarea class="form-control" v-model="ingredient.description"/>
+                <strong>Für Rezept:</strong>
+                <input type="number" class="form-control" v-model="ingredient.recipeId"/>
+                <button class="btn btn-success">Submit</button>
+            </form>
+        </div>
+        <div class="card-footer">
+            <div class="card-footer-item">
+            <pre>
+                <p>{{form.name = ingredient.name}}</p>
+                <p>{{form.description = ingredient.description}}</p>
+                <p>{{form.recipe_id = ingredient.recipeId}}</p>
+                <p>{{form.slug = ingredient.slug}}</p>
+            </pre>
+            </div>
+            <div class="card-footer-item">
+                <h1>Irgend ein Text</h1>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+    let form = new Form({
+        'slug':'',
+        'name':'',
+        'description':'',
+        'recipe_id':''
+    });
     export default {
         name: "edit-ingredient",
+        components:{
+            QueryMessage
+        },
         props: ['ingredient'],
+        created(){
+            console.log("insert_ingerdient ist geladen");
+        },
+        data(){
+            return{
+                form:form,
+                url:''
+            }
+        },
+        methods:{
+            submit() {
+                this.url='/ingredient/' + form.slug;
+                console.log(form.name + " " + form.description + " " + form.recipe_id)
+                console.log(this.url);
+                this.form
+                    .put(this.url)
+                    .then((response)=>{
+                        console.log(response);
+                    })
+                    .catch((error)=>{
+                        console.log("Errormessage:");
+                        console.log(this.form.failMessage);
+                    });
+            }
+        }
+
     }
 </script>
 
 <style scoped>
-    .bold {
-        font-weight: bold;
-    }
+
 </style>

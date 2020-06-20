@@ -88,6 +88,9 @@
             },
             closeDetails() {
                 document.getElementById("ingredientDetails").style.width = "0%";
+                axios.get('./list/ingredient')
+                    .then(response => this.ingredients = response.data)
+                    .catch(e => console.log(e));
             }
         }
 

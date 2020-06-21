@@ -30,10 +30,16 @@
                                         <input class="input" :key="result.id" :value="result.name" disabled>
                                     </p>
                                     <p class="control">
-                                        <a class="button is-info" @click="editIngredient(result)">
+                                        <a class="button is-info" @click="openIngredientDetails(result)">
                                             Edit
                                         </a>
                                     </p>
+                                    <div id="ingredientDetails" class="overlay">
+                                        <a href="javascript:void(0)" class="closebtn" v-on:click="closeDetails()">&times;</a>
+                                        <div class="overlay-content">
+                                            <edit_ingredient :ingredient="result"></edit_ingredient>
+                                        </div>
+                                    </div>
                                 </div>
                                 <br>
                             </div>
@@ -54,7 +60,17 @@
             return {
                 q: null,
                 results: [],
-                url: 'http://127.0.0.1:8000/ingredient/'
+                url: 'http://127.0.0.1:8000/ingredient/',
+                result: {
+                    id : 0,
+                    name: '',
+                    description: '',
+                    creationDate: '',
+                    quantity: '',
+                    slug: '',
+                    recipeId: '',
+                    updateDate: ''
+                }
             };
         },
         watch: {
@@ -70,12 +86,75 @@
                         .catch(err => console.log(err.data, err.status, err.statusText, err.headers, err.config));
                 }
             },
-            editIngredient(result){
-                window.location.href = this.url + result.slug;
+            openIngredientDetails(result) {
+                document.getElementById("ingredientDetails").style.width = "100%";
+                console.log(value);
+                this.ingredient.name = result.name;
+                this.ingredient.id = result.id;
+                this.ingredient.description = result.description;
+                this.ingredient.creationDate = result.created_at;
+                this.ingredient.quantity = result.quantity;
+                this.ingredient.slug = result.slug;
+                this.ingredient.recipeId = result.recipe_id;
+                this.ingredient.updateDate = result.updated_at;
+                console.log(this.ingredient.name);
+            },
+            closeDetails() {
+                document.getElementById("ingredientDetails").style.width = "0%";
+                axios.get('./list/ingredient')
+                    .then(response => this.ingredients = response.data)
+                    .catch(e => console.log(e));
             }
         }
     }
 </script>
 
 <style scoped>
+    /*table, th, td {*/
+    /*    border: 1px solid black;*/
+    /*}*/
+    tr:hover {
+        background: azure;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+    }
 </style>

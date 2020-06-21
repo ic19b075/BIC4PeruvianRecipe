@@ -27,21 +27,21 @@
                             <div class="control" v-for="result in results">
                                 <div class="field is-grouped">
                                     <p class="control is-expanded">
-                                        <input class="input" :key="result.id" :value="result.name" disabled>
+                                        <input class="input" :key="result.id" :value="result.name" disabled >
                                     </p>
                                     <p class="control">
                                         <a class="button is-info" @click="openIngredientDetails(result)">
                                             Edit
                                         </a>
                                     </p>
-                                    <div id="ingredientDetails" class="overlay">
-                                        <a href="javascript:void(0)" class="closebtn" v-on:click="closeDetails()">&times;</a>
-                                        <div class="overlay-content">
-                                            <edit_ingredient :ingredient="result"></edit_ingredient>
-                                        </div>
-                                    </div>
                                 </div>
                                 <br>
+                            </div>
+                            <div id="ingredientDetails" class="overlay">
+                                <a href="javascript:void(0)" class="closebtn" v-on:click="closeDetails()">&times;</a>
+                                <div class="overlay-content">
+                                    <edit_ingredient :ingredient="ingredient"></edit_ingredient>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                 q: null,
                 results: [],
                 url: 'http://127.0.0.1:8000/ingredient/',
-                result: {
+                ingredient: {
                     id : 0,
                     name: '',
                     description: '',
@@ -88,7 +88,7 @@
             },
             openIngredientDetails(result) {
                 document.getElementById("ingredientDetails").style.width = "100%";
-                console.log(value);
+                // console.log(value);
                 this.ingredient.name = result.name;
                 this.ingredient.id = result.id;
                 this.ingredient.description = result.description;
@@ -98,12 +98,13 @@
                 this.ingredient.recipeId = result.recipe_id;
                 this.ingredient.updateDate = result.updated_at;
                 console.log(this.ingredient.name);
+                console.log("Recipe ID of ingredient" + this.ingredient.recipeId);
             },
             closeDetails() {
                 document.getElementById("ingredientDetails").style.width = "0%";
-                axios.get('./list/ingredient')
-                    .then(response => this.ingredients = response.data)
-                    .catch(e => console.log(e));
+                // axios.get('./list/ingredient')
+                //     .then(response => this.ingredients = response.data)
+                //     .catch(e => console.log(e));
             }
         }
     }

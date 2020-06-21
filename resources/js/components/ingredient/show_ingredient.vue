@@ -8,11 +8,11 @@
             <tr cass="title is-6">
                 <th>ID</th>
                 <th>Name</th>
-                <th>Beschreibung</th>
-                <th>Eiheit</th>
-                <th>Menge</th>
-                <th>slug</th>
-                <th>Recipe_id</th>
+                <th>Description</th>
+                <th>Unit</th>
+                <th>Quantity</th>
+                <th>Slug</th>
+                <th>Recipe ID</th>
             </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@
         <div id="ingredientDetails" class="overlay">
             <a href="javascript:void(0)" class="closebtn" v-on:click="closeDetails()">&times;</a>
             <div class="overlay-content">
-                <edit-ingredient :ingredient="ingredient"></edit-ingredient>
+                <edit_ingredient :ingredient="ingredient"></edit_ingredient>
             </div>
         </div>
     </div>

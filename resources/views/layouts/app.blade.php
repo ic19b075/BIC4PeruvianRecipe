@@ -139,11 +139,8 @@
     <div class="main is-fullheight">
         @yield('content')
     </div>
-
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <small>Here comes some footer</small>
-        </div>
+    <footer>
+        <footer_comp></footer_comp>
     </footer>
 </div>
 </body>

@@ -15,18 +15,21 @@ window.Vue = vue;
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Eg. ./components/home.vue -> <example-component></example-component>
  */
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-Vue.component('insert_ingredient', require('./components/insert_ingredient').default);
-Vue.component('insert_recipe', require('./components/insert_recipe').default);
-Vue.component('show_recipe', require('./components/show_recipe').default);
-Vue.component('show_ingredient', require('./components/show_ingredient').default);
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('insert_ingredient', require('./components/ingredient/insert_ingredient').default);
+Vue.component('insert_recipe', require('./components/recipe/insert_recipe').default);
+Vue.component('show_recipe', require('./components/recipe/show_recipe').default);
+Vue.component('show_ingredient', require('./components/ingredient/show_ingredient').default);
+Vue.component('home', require('./components/home.vue').default);
+Vue.component('footer_comp', require('./components/footer_comp.vue').default);
 Vue.component('query-message', require('./components/base/QueryMessage.vue').default);
-Vue.component('edit-ingredient', require('./components/EditIngredient').default);
+Vue.component('edit_ingredient', require('./components/ingredient/edit_ingredient').default);
+Vue.component('edit_recipe', require('./components/recipe/edit_recipe').default);
+Vue.component('search_ingredient', require('./components/ingredient/search_ingredient').default);
 //try commit again
 
 

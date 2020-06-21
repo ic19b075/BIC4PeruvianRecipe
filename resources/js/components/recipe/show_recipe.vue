@@ -67,7 +67,7 @@
 </template>
 
 <script>
-    import EditRecipe from "./EditRecipe";
+    import EditRecipe from "./edit_recipe";
     export default {
         name: "show_recipe.vue",
         components: {EditRecipe},

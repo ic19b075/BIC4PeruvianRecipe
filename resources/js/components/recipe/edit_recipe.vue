@@ -1,4 +1,4 @@
-<template id="edit-ingredient">
+<template id="edit-recipe">
     <div class="card">
         <div class="card-header">
             <h1 class="card-header-title is-centered"  >Edit</h1>
@@ -6,21 +6,19 @@
         <div class="card-content">
             <form v-model="form" @submit.prevent="submit">
                 <strong>Name:</strong>
-                <input type="text" class="form-control" v-model="ingredient.name"/>
+                <input type="text" class="form-control" v-model="recipe.name"/>
                 <strong>Description:</strong>
-                <textarea class="form-control" v-model="ingredient.description"/>
-                <strong>Für Rezept:</strong>
-                <input type="number" class="form-control" v-model="ingredient.recipeId"/>
+                <textarea class="form-control" v-model="recipe.description"/>
                 <button class="btn btn-success">Submit</button>
             </form>
         </div>
         <div class="card-footer">
             <div class="card-footer-item">
             <pre>
-                <p>{{form.name = ingredient.name}}</p>
-                <p>{{form.description = ingredient.description}}</p>
-                <p>{{form.recipe_id = ingredient.recipeId}}</p>
-                <p>{{form.slug = ingredient.slug}}</p>
+                <p>{{form.name = recipe.name}}</p>
+                <p>{{form.description = recipe.description}}</p>
+                <p>{{form.recipe_id = recipe.recipeId}}</p>
+                <p>{{form.slug = recipe.slug}}</p>
             </pre>
             </div>
             <div class="card-footer-item">
@@ -38,13 +36,13 @@
         'recipe_id':''
     });
     export default {
-        name: "edit-ingredient",
+        name: "edit_recipe",
         components:{
             QueryMessage
         },
-        props: ['ingredient'],
+        props: ['recipe'],
         created(){
-            console.log("insert_ingerdient ist geladen");
+            console.log("edit_recipe ist geladen");
         },
         data(){
             return{
@@ -54,8 +52,8 @@
         },
         methods:{
             submit() {
-                this.url='/ingredient/' + form.slug;
-                console.log(form.name + " " + form.description + " " + form.recipe_id)
+                this.url='/recipe/' + form.slug;
+                console.log(form.name + " " + form.description);
                 console.log(this.url);
                 this.form
                     .put(this.url)

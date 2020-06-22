@@ -3,9 +3,9 @@
         <h1>
             All Ingredients
         </h1>
-       <table class="table is-fullwidth is-hoverable">
+       <table class="table is-fullwidth">
         <thead>
-            <tr cass="title is-6">
+            <tr class="title is-6">
                 <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="ingredient in ingredients" :key="ingredient.id" v-on:click="openIngredientDetails(ingredient)">
+            <tr  class="hover" v-for="ingredient in ingredients" :key="ingredient.id" v-on:click="openIngredientDetails(ingredient)">
                 <th>{{ingredient.id}}</th>
                 <th>{{ingredient.name}}</th>
                 <th>{{ingredient.description}}</th>
@@ -61,18 +61,7 @@
                 .catch(e => console.log(e));
         },
         methods: {
-            getIngredientList() {
-                axios.get('/list/ingredient').then(response => {
-                    console.log(response.data);
-                    return response.data;
-                }).then(jsonData => {
-                    this.ingredients = jsonData;
-                    console.log(this.ingredients);
-                })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
-            },
+
             openIngredientDetails(value) {
                 document.getElementById("ingredientDetails").style.width = "100%";
                 console.log(value);
@@ -99,11 +88,9 @@
 </script>
 
 <style scoped>
-    /*table, th, td {*/
-    /*    border: 1px solid black;*/
-    /*}*/
-    tr:hover {
-        background: azure;
+
+    .hover:hover {
+        background: aquamarine;
     }
 
     .overlay {

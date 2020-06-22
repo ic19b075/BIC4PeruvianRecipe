@@ -5,19 +5,19 @@
         </h1>
         <div v-for="recipe in recipes" :key="recipe.id">
             <h1>
-                Rezept
+                Recipe
             </h1>
-            <table class="table is-fullwidth is-hoverable" >
+            <table class="table is-fullwidth" >
             <thead>
-            <tr cass="title is-6">
+            <tr class="title is-6">
                 <th>ID</th>
                 <th>Slug</th>
                 <th>Name</th>
-                <th>Beschreibung</th>
+                <th>Description</th>
             </tr>
             </thead>
             <tbody>
-            <tr v-on:click="openRecipeDetails(recipe)">
+            <tr class ="hover" v-on:click="openRecipeDetails(recipe)">
                 <th>{{recipe.id}}</th>
                 <th>{{recipe.slug}}</th>
                 <th>{{recipe.name}}</th>
@@ -27,24 +27,23 @@
         </table>
 
         <h1>
-            Zutaten
+            Ingredients
         </h1>
             <div >
-                <table class="table is-fullwidth is-hoverable">
+                <table class="table is-fullwidth">
                     <thead>
-                    <tr cass="title is-5">
+                    <tr class="title is-5">
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Beschreibung</th>
-                        <th>Eiheit</th>
-                        <th>Menge</th>
+                        <th>Description</th>
+                        <th>Unit</th>
+                        <th>Quantity</th>
                         <th>slug</th>
-                        <th>Recipe_id</th>
+                        <th>Recipe ID</th>
                     </tr>
                     </thead>
-
                     <tbody>
-                    <tr v-for="ingredient in filtering_all(ingredients,recipe.id)" :key="ingredient.id">
+                    <tr class ="hover" v-for="ingredient in filtering_all(ingredients,recipe.id)" :key="ingredient.id">
                         <th>{{ingredient.id}}</th>
                         <th>{{ingredient.name}}</th>
                         <th>{{ingredient.description}}</th>
@@ -129,11 +128,9 @@
 </script>
 
 <style scoped>
-    /*table, th, td {*/
-    /*    border: 1px solid black;*/
-    /*}*/
-    tr:hover {
-        background: azure;
+
+    .hover:hover {
+        background: aquamarine;
     }
 
     .overlay {

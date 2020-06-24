@@ -3,19 +3,19 @@
         <div class="card-header">
             <h1 class="card-header-title is-centered"> Edit </h1>
         </div>
-        <div class="card-content">
+        <div class="card-content" style="background-color:#f4f8ed">
             <form v-model="form" @submit.prevent="submit">
                 <strong> Name: </strong>
-                <input type="text" style="height:35px;width:200px; font-size:15px" class="form-control" v-model="ingredient.name"/>
+                <input type="text" style="height:35px;width:200px; font-size:15px; background-color:#f1f6f2" class="form-control" v-model="ingredient.name"/>
                 <strong> Description: </strong>
-                <textarea style="height:50px;width:650px; font-size:15px" cols="90" v-model="ingredient.description"/>
+                <textarea style="height:50px;width:650px; font-size:15px; background-color:#f1f6f2" cols="90" v-model="ingredient.description"/>
                 <strong> Für Rezept: </strong>
-                <input type="number" style="height:35px;width:40px; font-size:18px;" class="form-control" v-model="ingredient.recipeId"/>
+                <input type="number" style="height:35px;width:40px; font-size:18px; background-color:#f1f6f2" class="form-control" v-model="ingredient.recipeId"/>
                 <hr>
                     <button class="block">Submit</button>
             </form>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" style="background-color:#f6f8ed">
             <div class="card-footer-item">
             <pre class="my-pre">
                 <p style="font-size:30px; color:#829247; font-weight: bold; text-align:center;">P R E V I E W</p>

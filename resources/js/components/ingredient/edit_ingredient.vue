@@ -9,7 +9,7 @@
                 <input type="text" style="height:35px;width:200px; font-size:15px; background-color:#f1f6f2" class="form-control" v-model="ingredient.name"/>
                 <strong> Description: </strong>
                 <textarea style="height:50px;width:650px; font-size:15px; background-color:#f1f6f2" cols="90" v-model="ingredient.description"/>
-                <strong> Für Rezept: </strong>
+                <strong> For Recipe: </strong>
                 <input type="number" style="height:35px;width:40px; font-size:18px; background-color:#f1f6f2" class="form-control" v-model="ingredient.recipeId"/>
                 <hr>
                     <button class="block">Submit</button>
@@ -44,7 +44,7 @@
         },
         props: ['ingredient'],
         created(){
-            console.log("edit_ingredient ist geladen");
+            console.log("edit_ingredient loaded");
         },
         data(){
             return{

@@ -79,7 +79,6 @@
             }
         },
         created() {
-            //console.log("Component show_recipe eingebunden");
             axios.get('./list/recipe')
                 .then(response => this.recipes = response.data)
                 .catch(e => console.log(e));

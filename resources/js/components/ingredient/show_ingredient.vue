@@ -55,7 +55,7 @@
             }
         },
         created() {
-            console.log("Component show_ingredient eingebunden");
+            console.log("Component show_ingredient loaded");
             axios.get('./list/ingredient')
                 .then(response => this.ingredients = response.data)
                 .catch(e => console.log(e));

@@ -1,28 +1,31 @@
 <template id="edit_ingredient">
     <div class="card">
         <div class="card-header">
-            <h1 class="card-header-title is-centered"  >Edit</h1>
+            <h1 class="card-header-title is-centered"> Edit </h1>
         </div>
-        <div class="card-content">
+        <div class="card-content" style="background-color:#f4f8ed">
             <form v-model="form" @submit.prevent="submit">
-                <strong>Name:</strong>
-                <input type="text" class="form-control" v-model="ingredient.name"/>
-                <strong>Description:</strong>
-                <textarea class="form-control" v-model="ingredient.description"/>
-                <strong>Für Rezept:</strong>
-                <input type="number" class="form-control" v-model="ingredient.recipeId"/>
-                <button class="btn btn-success">Submit</button>
+                <strong> Name: </strong>
+                <input type="text" style="height:35px;width:200px; font-size:15px; background-color:#f1f6f2" class="form-control" v-model="ingredient.name"/>
+                <strong> Description: </strong>
+                <textarea style="height:50px;width:650px; font-size:15px; background-color:#f1f6f2" cols="90" v-model="ingredient.description"/>
+                <strong> Für Rezept: </strong>
+                <input type="number" style="height:35px;width:40px; font-size:18px; background-color:#f1f6f2" class="form-control" v-model="ingredient.recipeId"/>
+                <hr>
+                    <button class="block">Submit</button>
             </form>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" style="background-color:#f6f8ed">
             <div class="card-footer-item">
-            <pre>
-                <p>{{form.name = ingredient.name}}</p>
-                <p>{{form.description = ingredient.description}}</p>
-                <p>{{form.recipe_id = ingredient.recipeId}}</p>
-                <p>{{form.slug = ingredient.slug}}</p>
+            <pre class="my-pre">
+                <p style="font-size:30px; color:#829247; font-weight: bold; text-align:center;">P R E V I E W</p>
+                <p style="font-size:25px; text-align:center; font-weight: bold">{{form.name = ingredient.name}}</p>
+                <p style="font-size:21px">{{form.description = ingredient.description}}</p>
+                <p style="font-size:19px; text-align:center; font-weight: bold">Rezept ID:  {{form.recipe_id = ingredient.recipeId}}</p>
+                <p style="font-size:19px;text-align:center; font-weight: bold">Rezept Slug:  {{form.slug = ingredient.slug}}</p>
             </pre>
             </div>
+
         </div>
     </div>
 </template>
@@ -41,7 +44,7 @@
         },
         props: ['ingredient'],
         created(){
-            console.log("edit_ingredient loaded");
+            console.log("edit_ingredient ist geladen");
         },
         data(){
             return{
@@ -70,5 +73,34 @@
 </script>
 
 <style scoped>
+    .block {
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 28px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .block:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    hr {
+        border: 3px solid #318b35;
+        border-radius: 10px;
+    }
 
+    .my-pre{
+        background-color: rgb(244, 252, 226);
+        background-size:2.4em 2.4em;
+        background-origin:content-box;
+
+        /* some extra styles*/
+        padding:0 20px;
+        text-align:justify;
+        font-family:calibri,arial,sans-serif;
+    }
 </style>

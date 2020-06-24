@@ -10,7 +10,7 @@
                 <div class="card-content">
                     <div class="content">
                         <div class="field">
-                            <label class="label">Search by name or description</label>
+                            <label class="label">Name or description</label>
                             <div class="control">
                                 <input class="input" type="text" placeholder="Search" v-model="q">
                             </div>

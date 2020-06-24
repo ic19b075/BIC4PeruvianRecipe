@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            <h1 class="card-header-title is-centered"  >Hinzufügen</h1>
+            <h1 class="card-header-title is-centered"  >New Ingredient</h1>
         </div>
         <div class="card-content">
             <form v-model="form" @submit.prevent="submit">
@@ -9,15 +9,15 @@
                 <input type="text" class="form-control" v-model="form.name"/>
                 <strong>Description:</strong>
                 <textarea class="form-control" v-model="form.description"/>
-                <strong>Menge:</strong>
+                <strong>Quantity:</strong>
                 <input type="number"  class="form-control" v-model="form.quantity"/>
-                <strong>Einheit:</strong>
+                <strong>Unit:</strong>
                 <select class="form-control" v-model="form.unit">
                     <option value="grams">grams</option>
                     <option value="milliliters">milliliters</option>
                     <option value="pieces">pieces</option>
                 </select>
-                <strong>Für Rezept:</strong>
+                <strong>For Recipe:</strong>
                 <input type="number" class="form-control" v-model="form.recipe_id"/>
                 <button class="btn btn-success">Submit</button>
             </form>
@@ -32,9 +32,6 @@
                 <p>{{form.recipe_id}}</p>
                 <p>{{form.id}}</p>
             </pre>
-            </div>
-            <div class="card-footer-item">
-                <h1>Irgend ein Text</h1>
             </div>
         </div>
     </div>
@@ -56,7 +53,7 @@
             QueryMessage
         },
         created(){
-            console.log("insert_ingerdient ist geladen");
+            console.log("insert_ingredient loaded");
         },
         data(){
             return{

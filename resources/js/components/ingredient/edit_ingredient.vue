@@ -23,9 +23,6 @@
                 <p>{{form.slug = ingredient.slug}}</p>
             </pre>
             </div>
-            <div class="card-footer-item">
-                <h1>Irgend ein Text</h1>
-            </div>
         </div>
     </div>
 </template>
@@ -44,7 +41,7 @@
         },
         props: ['ingredient'],
         created(){
-            console.log("edit_ingredient ist geladen");
+            console.log("edit_ingredient loaded");
         },
         data(){
             return{

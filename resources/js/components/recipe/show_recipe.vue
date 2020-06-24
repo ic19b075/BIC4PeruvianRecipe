@@ -1,18 +1,17 @@
 <template>
     <div class="table-container is-fullwidth">
         <h1>
-            All Recipes
+            A List of all Recipes! Enjoy!
         </h1>
         <div v-for="recipe in recipes" :key="recipe.id">
-            <h1>
-                Recipe
-            </h1>
+            <h2>
+                {{recipe.name}}
+            </h2>
             <table class="table is-fullwidth" >
             <thead>
             <tr class="title is-6">
                 <th>ID</th>
                 <th>Slug</th>
-                <th>Name</th>
                 <th>Description</th>
             </tr>
             </thead>
@@ -20,15 +19,13 @@
             <tr class ="hover" v-on:click="openRecipeDetails(recipe)">
                 <th>{{recipe.id}}</th>
                 <th>{{recipe.slug}}</th>
-                <th>{{recipe.name}}</th>
                 <th>{{recipe.description}}</th>
             </tr>
             </tbody>
         </table>
-
-        <h1>
+        <h3>
             Ingredients
-        </h1>
+        </h3>
             <div >
                 <table class="table is-fullwidth">
                     <thead>
@@ -98,8 +95,7 @@
                     list.push(inPut[i]);
                 }
             };
-        //console.log("Funktion wurde druchlaufen")
-        //console.log(list);
+
         return list;
         },
             openRecipeDetails(recipe) {
@@ -120,10 +116,7 @@
                     .catch(e => console.log(e));
             }
         }
-
     }
-
-
 
 </script>
 
@@ -172,6 +165,19 @@
         top: 20px;
         right: 45px;
         font-size: 60px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+        color: darkcyan;
+    }
+
+    h3 {
+        text-align: center;
+        font-weight: bold;
+        color: #00b89c;
+        font-size: larger;
     }
 </style>
 

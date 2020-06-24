@@ -1,7 +1,7 @@
 <template>
     <div class="table-container is-fullwidth">
         <h1>
-            All Ingredients
+           Browse all Ingredients!
         </h1>
        <table class="table is-fullwidth">
         <thead>
@@ -19,7 +19,7 @@
             <tr  class="hover" v-for="ingredient in ingredients" :key="ingredient.id" v-on:click="openIngredientDetails(ingredient)">
                 <th>{{ingredient.id}}</th>
                 <th>{{ingredient.name}}</th>
-                <th>{{ingredient.description}}</th>
+                <th width="1000px">{{ingredient.description}}</th>
                 <th>{{ingredient.unit}}</th>
                 <th>{{ingredient.quantity}}</th>
                 <th>{{ingredient.slug}}</th>

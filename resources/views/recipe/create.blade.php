@@ -4,7 +4,7 @@
 @section('content')
     <section class="section">
         <div class="container">
-            <h1>Create recipe</h1>
+            <h1 class="has-text-centered">Add a new recipe!</h1>
             <insert_recipe></insert_recipe>
         </div>
     </section>

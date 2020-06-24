@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            <h1 class="card-header-title is-centered"  >Hinzufügen</h1>
+            <h1 class="card-header-title is-centered"  >New Recipe</h1>
         </div>
         <div class="card-content">
             <form v-model="rform" @submit.prevent="submitting">
@@ -18,9 +18,6 @@
                     <p>{{rform.name}}</p>
                     <p>{{rform.description}}</p>
                 </pre>
-            </div>
-            <div class="card-footer-item">
-                <h1>Irgend ein Text</h1>
             </div>
         </div>
     </div>
@@ -39,7 +36,7 @@
             QueryMessage
         },
         created() {
-            console.log("insert_recipe.vue ist geladen");
+            console.log("insert_recipe loaded");
         },
         data(){
             return{

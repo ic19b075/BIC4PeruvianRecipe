@@ -21,9 +21,6 @@
                 <p>{{form.slug = recipe.slug}}</p>
             </pre>
             </div>
-            <div class="card-footer-item">
-                <h1>Irgend ein Text</h1>
-            </div>
         </div>
     </div>
 </template>
@@ -42,7 +39,7 @@
         },
         props: ['recipe'],
         created(){
-            console.log("edit_recipe ist geladen");
+            console.log("edit_recipe loaded");
         },
         data(){
             return{

@@ -15,13 +15,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr  class="hover" v-for="ingredient in ingredients" :key="ingredient.id" v-on:click="openIngredientDetails(ingredient)">
+            <tr  class="hover" v-for="ingredient in ingredients" :key="ingredient.id" v-on:click.stop.prevent="openIngredientDetails(ingredient)">
                 <th>{{ingredient.id}}</th>
                 <th>{{ingredient.name}}</th>
                 <th width="1000px">{{ingredient.description}}</th>
                 <th>{{ingredient.unit}}</th>
                 <th>{{ingredient.quantity}}</th>
-                <th>{{ingredient.recipe_id}}</th>
+                <th>
+                    <button type="button" v-on:click.stop.prevent="openRecipeList()">{{ingredient.recipe_id}}</button>
+                </th>
             </tr>
         </tbody>
         </table>
@@ -78,6 +80,9 @@
                 axios.get('./list/ingredient')
                     .then(response => this.ingredients = response.data)
                     .catch(e => console.log(e));
+            },
+            openRecipeList() {
+                window.open('./recipe');
             }
         }
 

@@ -1,7 +1,7 @@
 <template>
     <div class="table-container is-fullwidth">
         <h1>
-            A List of all Recipes! Enjoy!
+            A List_of all Recipes! Enjoy!
         </h1>
         <div v-for="recipe in recipes" :key="recipe.id">
             <h2>

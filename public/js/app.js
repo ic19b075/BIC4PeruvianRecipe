@@ -22581,7 +22581,7 @@ var render = function() {
     "div",
     { staticClass: "table-container is-fullwidth" },
     [
-      _c("h1", [_vm._v("\n        A List of all Recipes! Enjoy!\n    ")]),
+      _c("h1", [_vm._v("\n        A List_of all Recipes! Enjoy!\n    ")]),
       _vm._v(" "),
       _vm._l(_vm.recipes, function(recipe) {
         return _c("div", { key: recipe.id }, [

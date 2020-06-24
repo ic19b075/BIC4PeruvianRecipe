@@ -15,15 +15,21 @@
                     <button class="block">Submit</button>
             </form>
         </div>
-        <div class="card-footer" style="background-color:#f6f8ed">
+        <div class="card-footer" style="background-color:#f6f8ed ">
             <div class="card-footer-item">
             <pre class="my-pre">
                 <p style="font-size:30px; color:#829247; font-weight: bold; text-align:center;">P R E V I E W</p>
                 <p style="font-size:25px; text-align:center; font-weight: bold">{{form.name = ingredient.name}}</p>
-                <p style="font-size:21px">{{form.description = ingredient.description}}</p>
+                <p style="font-size:21px; max-width: 30em">{{form.description = ingredient.description}}</p>
                 <p style="font-size:19px; text-align:center; font-weight: bold">Rezept ID:  {{form.recipe_id = ingredient.recipeId}}</p>
                 <p style="font-size:19px;text-align:center; font-weight: bold">Rezept Slug:  {{form.slug = ingredient.slug}}</p>
             </pre>
+            </div>
+            <div class="card-footer-item">
+                <pre>
+                    <h1 style="background-color: orange">You are now in EDIT-MODE. Every Change made</br>here will be written directly to the Database.</br>Please be carefull.</br>See <b>console.log</b> for</br>errors or success</h1>
+                </pre>
+
             </div>
 
         </div>

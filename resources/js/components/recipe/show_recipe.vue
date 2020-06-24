@@ -3,7 +3,7 @@
         <h1>
             All Recipes
         </h1>
-        <div v-for="recipe in recipes" :key="recipe.id">
+        <div class="card" v-for="recipe in recipes" :key="recipe.id">
             <h1>
                 Recipe
             </h1>
@@ -55,6 +55,10 @@
                     </tbody>
                 </table>
             </div>
+        <div class="card-footer">
+            <h1> </h1>
+            </br>
+        </div>
         </div>
         <div id="recipeDetails" class="overlay">
             <a href="javascript:void(0)" class="closebtn" v-on:click="closeDetails()">&times;</a>
@@ -62,6 +66,7 @@
                 <edit-recipe :recipe="recipe"></edit-recipe>
             </div>
         </div>
+
     </div>
 </template>
 

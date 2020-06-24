@@ -13,16 +13,9 @@
             </form>
         </div>
         <div class="card-footer">
+
             <div class="card-footer-item">
-            <pre>
-                <p>{{form.name = recipe.name}}</p>
-                <p>{{form.description = recipe.description}}</p>
-                <p>{{form.recipe_id = recipe.recipeId}}</p>
-                <p>{{form.slug = recipe.slug}}</p>
-            </pre>
-            </div>
-            <div class="card-footer-item">
-                <h1>Irgend ein Text</h1>
+                <h1 style="background-color: orange">You are now in EDIT-MODE. Every Change made here will be written directly to the Database. Please be carefull. See console.log for errors or success</h1>
             </div>
         </div>
     </div>

@@ -15,18 +15,22 @@
                     <button class="block">Submit</button>
             </form>
         </div>
-        <div class="card-footer" style="background-color:#f6f8ed">
+        <div class="card-footer" style="background-color:#f6f8ed ">
             <div class="card-footer-item">
-            <pre class="my-pre">
-                <p style="font-size:30px; color:#829247; font-weight: bold; text-align:center;">P R E V I E W</p>
-                <p style="font-size:25px; text-align:center; font-weight: bold">{{form.name = ingredient.name}}</p>
-                <p style="font-size:21px">{{form.description = ingredient.description}}</p>
-                <p style="font-size:19px; text-align:center; font-weight: bold">Rezept ID:  {{form.recipe_id = ingredient.recipeId}}</p>
-                <p style="font-size:19px;text-align:center; font-weight: bold">Rezept Slug:  {{form.slug = ingredient.slug}}</p>
-            </pre>
+                <pre class="my-pre">
+                    <p style="font-size:30px; color:#829247; font-weight: bold; text-align:center;">PREVIEW</p>
+                    <p style="font-size:25px; text-align:center; font-weight: bold">{{form.name = ingredient.name}}</p>
+                    <p style="font-size:21px; max-width: 30em">{{form.description = ingredient.description}}</p>
+                    <p style="font-size:19px; text-align:center; font-weight: bold">Recipe ID: {{form.recipe_id = ingredient.recipeId}}</p>
+                </pre>
             </div>
-
+            <div>
+        <pre>
+            <p style="background-color: orange">You are now in EDIT-MODE. Every Change made</br>here will be written directly to the Database.</br>Please be careful.</br>See <b>console.log</b> for</br>errors or success</p>
+        </pre>
+            </div>
         </div>
+    </div>
     </div>
 </template>
 
@@ -77,7 +81,7 @@
         display: block;
         width: 100%;
         border: none;
-        background-color: #4caf50;
+        background-color: #00b89c;
         color: white;
         padding: 14px 28px;
         font-size: 20px;
@@ -85,7 +89,7 @@
         text-align: center;
     }
     .block:hover {
-        background-color: #ddd;
+        background-color: green;
         color: black;
     }
     hr {

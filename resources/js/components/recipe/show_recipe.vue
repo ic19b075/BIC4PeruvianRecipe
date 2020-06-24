@@ -34,9 +34,9 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th>Unit</th>
-                        <th>Quantity</th>
+                        <th width="10%">Quantity</th>
                         <th>slug</th>
-                        <th>Recipe ID</th>
+                        <th width="10%">Recipe ID</th>
                     </tr>
                     </thead>
                     <tbody>

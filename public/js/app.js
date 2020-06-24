@@ -2045,6 +2045,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 var form = new Form({
   'slug': '',
   'name': '',
@@ -2159,7 +2163,7 @@ var form = new Form({
     QueryMessage: QueryMessage
   },
   created: function created() {
-    console.log("insert_ingerdient ist geladen");
+    console.log("insert_ingredient loaded");
   },
   data: function data() {
     return {
@@ -2301,9 +2305,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log("Recipe ID of ingredient" + this.ingredient.recipeId);
     },
     closeDetails: function closeDetails() {
-      document.getElementById("ingredientDetails").style.width = "0%"; // axios.get('./list/ingredient')
-      //     .then(response => this.ingredients = response.data)
-      //     .catch(e => console.log(e));
+      document.getElementById("ingredientDetails").style.width = "0%";
     }
   }
 });
@@ -2763,7 +2765,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.block[data-v-11333d1a] {\n    display: block;\n    width: 100%;\n    border: none;\n    background-color: #4caf50;\n    color: white;\n    padding: 14px 28px;\n    font-size: 20px;\n    cursor: pointer;\n    text-align: center;\n}\n.block[data-v-11333d1a]:hover {\n    background-color: #ddd;\n    color: black;\n}\nhr[data-v-11333d1a] {\n    border: 3px solid #318b35;\n    border-radius: 10px;\n}\n.my-pre[data-v-11333d1a]{\n    background-color: rgb(244, 252, 226);\n    background-size:2.4em 2.4em;\n    background-origin:content-box;\n\n    /* some extra styles*/\n    padding:0 20px;\n    text-align:justify;\n    font-family:calibri,arial,sans-serif;\n}\n", ""]);
+exports.push([module.i, "\n.block[data-v-11333d1a] {\n    display: block;\n    width: 100%;\n    border: none;\n    background-color: #00b89c;\n    color: white;\n    padding: 14px 28px;\n    font-size: 20px;\n    cursor: pointer;\n    text-align: center;\n}\n.block[data-v-11333d1a]:hover {\n    background-color: green;\n    color: black;\n}\nhr[data-v-11333d1a] {\n    border: 3px solid #318b35;\n    border-radius: 10px;\n}\n.my-pre[data-v-11333d1a]{\n    background-color: rgb(244, 252, 226);\n    background-size:2.4em 2.4em;\n    background-origin:content-box;\n\n    /* some extra styles*/\n    padding:0 20px;\n    text-align:justify;\n    font-family:calibri,arial,sans-serif;\n}\n", ""]);
 
 // exports
 
@@ -2782,7 +2784,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.block[data-v-086b5fa4] {\n    display: block;\n    width: 100%;\n    border: none;\n    background-color: #4caf50;\n    color: white;\n    padding: 14px 28px;\n    font-size: 20px;\n    cursor: pointer;\n    text-align: center;\n}\n.block[data-v-086b5fa4]:hover {\n    background-color: #ddd;\n    color: black;\n}\nhr[data-v-086b5fa4] {\n    border: 3px solid #318b35;\n    border-radius: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.block[data-v-086b5fa4] {\n    display: block;\n    width: 100%;\n    border: none;\n    background-color: #00b89c;\n    color: white;\n    padding: 14px 28px;\n    font-size: 20px;\n    cursor: pointer;\n    text-align: center;\n}\n.block[data-v-086b5fa4]:hover {\n    background-color: green;\n    color: black;\n}\nhr[data-v-086b5fa4] {\n    border: 3px solid #318b35;\n    border-radius: 10px;\n}\n.my-pre[data-v-086b5fa4]{\n    background-color: rgb(244, 252, 226);\n    background-size:2.4em 2.4em;\n    background-origin:content-box;\n\n    /* some extra styles*/\n    padding:0 20px;\n    text-align:justify;\n    font-family:calibri,arial,sans-serif;\n}\n", ""]);
 
 // exports
 
@@ -2801,7 +2803,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*table, th, td {*/\n/*    border: 1px solid black;*/\n/*}*/\ntr[data-v-cb50be56]:hover {\n    background: azure;\n}\n.overlay[data-v-cb50be56] {\n    height: 100%;\n    width: 0;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    left: 0;\n    background-color: white;\n    background-color: white;\n    overflow-x: hidden;\n    transition: 0.5s;\n}\n.overlay-content[data-v-cb50be56] {\n    position: relative;\n    top: 25%;\n    width: 100%;\n    text-align: center;\n    margin-top: 30px;\n}\n.overlay a[data-v-cb50be56] {\n    padding: 8px;\n    text-decoration: none;\n    font-size: 36px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n.overlay a[data-v-cb50be56]:hover, .overlay a[data-v-cb50be56]:focus {\n    color: #f1f1f1;\n}\n.overlay .closebtn[data-v-cb50be56] {\n    position: absolute;\n    top: 20px;\n    right: 45px;\n    font-size: 60px;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*table, th, td {*/\n/*    border: 1px solid black;*/\n/*}*/\ntr[data-v-cb50be56]:hover {\n    background: azure;\n}\n.overlay[data-v-cb50be56] {\n    height: 100%;\n    width: 0;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    left: 0;\n    background-color: white;\n    overflow-x: hidden;\n    transition: 0.5s;\n}\n.overlay-content[data-v-cb50be56] {\n    position: relative;\n    top: 25%;\n    width: 100%;\n    text-align: center;\n    margin-top: 30px;\n}\n.overlay a[data-v-cb50be56] {\n    padding: 8px;\n    text-decoration: none;\n    font-size: 36px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n.overlay a[data-v-cb50be56]:hover, .overlay a[data-v-cb50be56]:focus {\n    color: #f1f1f1;\n}\n.overlay .closebtn[data-v-cb50be56] {\n    position: absolute;\n    top: 20px;\n    right: 45px;\n    font-size: 60px;\n}\n", ""]);
 
 // exports
 
@@ -2839,7 +2841,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.block[data-v-d6e05b44] {\n    display: block;\n    width: 100%;\n    border: none;\n    background-color: #4caf50;\n    color: white;\n    padding: 14px 28px;\n    font-size: 20px;\n    cursor: pointer;\n    text-align: center;\n}\n.block[data-v-d6e05b44]:hover {\n    background-color: #ddd;\n    color: black;\n}\nhr[data-v-d6e05b44] {\n    border: 3px solid #318b35;\n    border-radius: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.block[data-v-d6e05b44] {\n    display: block;\n    width: 100%;\n    border: none;\n    background-color: #00b89c;\n    color: white;\n    padding: 14px 28px;\n    font-size: 20px;\n    cursor: pointer;\n    text-align: center;\n}\n.block[data-v-d6e05b44]:hover {\n    background-color: green;\n    color: black;\n}\nhr[data-v-d6e05b44] {\n    border: 3px solid #318b35;\n    border-radius: 10px;\n}\n", ""]);
 
 // exports
 
@@ -21553,7 +21555,7 @@ var render = function() {
       [
         _c("div", { staticClass: "card-footer-item" }, [
           _c("pre", { staticClass: "my-pre" }, [
-            _vm._v("            "),
+            _vm._v("                "),
             _c(
               "p",
               {
@@ -21564,9 +21566,9 @@ var render = function() {
                   "text-align": "center"
                 }
               },
-              [_vm._v("P R E V I E W")]
+              [_vm._v("PREVIEW")]
             ),
-            _vm._v("\n            "),
+            _vm._v("\n                "),
             _c(
               "p",
               {
@@ -21578,13 +21580,17 @@ var render = function() {
               },
               [_vm._v(_vm._s((_vm.form.name = _vm.ingredient.name)))]
             ),
-            _vm._v("\n            "),
-            _c("p", { staticStyle: { "font-size": "21px" } }, [
-              _vm._v(
-                _vm._s((_vm.form.description = _vm.ingredient.description))
-              )
-            ]),
-            _vm._v("\n            "),
+            _vm._v("\n                "),
+            _c(
+              "p",
+              { staticStyle: { "font-size": "21px", "max-width": "30em" } },
+              [
+                _vm._v(
+                  _vm._s((_vm.form.description = _vm.ingredient.description))
+                )
+              ]
+            ),
+            _vm._v("\n                "),
             _c(
               "p",
               {
@@ -21596,31 +21602,16 @@ var render = function() {
               },
               [
                 _vm._v(
-                  "Rezept ID:  " +
+                  "Recipe ID: " +
                     _vm._s((_vm.form.recipe_id = _vm.ingredient.recipeId))
                 )
               ]
             ),
-            _vm._v("\n            "),
-            _c(
-              "p",
-              {
-                staticStyle: {
-                  "font-size": "19px",
-                  "text-align": "center",
-                  "font-weight": "bold"
-                }
-              },
-              [
-                _vm._v(
-                  "Rezept Slug:  " +
-                    _vm._s((_vm.form.slug = _vm.ingredient.slug))
-                )
-              ]
-            ),
-            _vm._v("\n        ")
+            _vm._v("\n            ")
           ])
-        ])
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
       ]
     )
   ])
@@ -21633,6 +21624,30 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title is-centered" }, [
         _vm._v(" Edit ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("pre", [
+        _vm._v("        "),
+        _c("p", { staticStyle: { "background-color": "orange" } }, [
+          _vm._v("You are now in EDIT-MODE. Every Change made"),
+          _c("br"),
+          _vm._v("here will be written directly to the Database."),
+          _c("br"),
+          _vm._v("Please be careful."),
+          _c("br"),
+          _vm._v("See "),
+          _c("b", [_vm._v("console.log")]),
+          _vm._v(" for"),
+          _c("br"),
+          _vm._v("errors or success")
+        ]),
+        _vm._v("\n    ")
       ])
     ])
   }
@@ -21742,7 +21757,7 @@ var render = function() {
           _vm._v(" "),
           _c("br"),
           _vm._v(" "),
-          _c("strong", [_vm._v("Menge:")]),
+          _c("strong", [_vm._v("Quantity:")]),
           _vm._v(" "),
           _c("br"),
           _vm._v(" "),
@@ -21771,7 +21786,7 @@ var render = function() {
           _vm._v(" "),
           _c("br"),
           _vm._v(" "),
-          _c("strong", [_vm._v("Einheit:")]),
+          _c("strong", [_vm._v("Unit:")]),
           _vm._v(" "),
           _c("br"),
           _vm._v(" "),
@@ -21819,7 +21834,7 @@ var render = function() {
           _vm._v(" "),
           _c("br"),
           _vm._v(" "),
-          _c("strong", [_vm._v("Für Rezept:")]),
+          _c("strong", [_vm._v("For Recipe:")]),
           _vm._v(" "),
           _c("br"),
           _vm._v(" "),
@@ -21858,22 +21873,22 @@ var render = function() {
         "div",
         {
           staticClass: "card-footer-item",
-          staticStyle: { "background-color": "#b3d7b3" }
+          staticStyle: { "background-color": "#f6f8ed" }
         },
         [
-          _c("pre", [
+          _c("pre", { staticClass: "my-pre" }, [
             _vm._v("            "),
             _c(
               "p",
               {
                 staticStyle: {
                   "font-size": "30px",
-                  color: "#a1b164",
+                  color: "#00b89c",
                   "font-weight": "bold",
                   "text-align": "center"
                 }
               },
-              [_vm._v(" P R E V I E W ")]
+              [_vm._v("PREVIEW")]
             ),
             _vm._v("\n            "),
             _c(
@@ -21893,15 +21908,15 @@ var render = function() {
             ]),
             _vm._v("\n            "),
             _c("p", { staticStyle: { "font-weight": "bold" } }, [
-              _vm._v(" Menge: " + _vm._s(_vm.form.quantity))
+              _vm._v(" Quantity: " + _vm._s(_vm.form.quantity))
             ]),
             _vm._v("\n            "),
             _c("p", { staticStyle: { "font-weight": "bold" } }, [
-              _vm._v(" Einheit: " + _vm._s(_vm.form.unit))
+              _vm._v(" Unit: " + _vm._s(_vm.form.unit))
             ]),
             _vm._v("\n            "),
             _c("p", { staticStyle: { "font-weight": "bold" } }, [
-              _vm._v(" Für Rezept: " + _vm._s(_vm.form.recipe_id))
+              _vm._v(" For recipe: " + _vm._s(_vm.form.recipe_id))
             ]),
             _vm._v("\n            "),
             _c("p", [_vm._v(_vm._s(_vm.form.id))]),
@@ -21919,7 +21934,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title is-centered" }, [
-        _vm._v("Hinzufügen")
+        _vm._v("New Ingredient")
       ])
     ])
   }
@@ -22468,7 +22483,7 @@ var render = function() {
         "div",
         {
           staticClass: "card-footer-item",
-          staticStyle: { "background-color": "#b3d7b3" }
+          staticStyle: { "background-color": "#f6f8ed" }
         },
         [
           _c("pre", [
@@ -22478,12 +22493,12 @@ var render = function() {
               {
                 staticStyle: {
                   "font-size": "30px",
-                  color: "#a1b164",
+                  color: "#00b89c",
                   "font-weight": "bold",
                   "text-align": "center"
                 }
               },
-              [_vm._v(" P R E V I E W ")]
+              [_vm._v(" PREVIEW")]
             ),
             _vm._v("\n                "),
             _c(
@@ -22671,11 +22686,11 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Unit")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Quantity")]),
+        _c("th", { attrs: { width: "10%" } }, [_vm._v("Quantity")]),
         _vm._v(" "),
         _c("th", [_vm._v("slug")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Recipe ID")])
+        _c("th", { attrs: { width: "10%" } }, [_vm._v("Recipe ID")])
       ])
     ])
   }

@@ -102,9 +102,6 @@
             },
             closeDetails() {
                 document.getElementById("ingredientDetails").style.width = "0%";
-                // axios.get('./list/ingredient')
-                //     .then(response => this.ingredients = response.data)
-                //     .catch(e => console.log(e));
             }
         }
     }
@@ -125,7 +122,6 @@
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: white;
         background-color: white;
         overflow-x: hidden;
         transition: 0.5s;

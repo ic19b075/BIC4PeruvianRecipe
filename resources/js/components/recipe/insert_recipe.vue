@@ -17,9 +17,9 @@
             </form>
         </div>
         <div class="card-footer">
-            <div class="card-footer-item" style="background-color: #b3d7b3">
+            <div class="card-footer-item" style="background-color:#f6f8ed">
                 <pre>
-                    <p style="font-size:30px; color:#a1b164; font-weight: bold; text-align:center;"> P R E V I E W </p>
+                    <p style="font-size:30px; color:#00b89c; font-weight: bold; text-align:center;"> PREVIEW</p>
                     <p style="font-size:18px; text-align:center; font-weight: bold">{{rform.name}}</p>
                     <p style="font-size:16px">{{rform.description}}</p>
                 </pre>
@@ -73,7 +73,7 @@
         display: block;
         width: 100%;
         border: none;
-        background-color: #4caf50;
+        background-color: #00b89c;
         color: white;
         padding: 14px 28px;
         font-size: 20px;
@@ -81,7 +81,7 @@
         text-align: center;
     }
     .block:hover {
-        background-color: #ddd;
+        background-color: green;
         color: black;
     }
     hr {

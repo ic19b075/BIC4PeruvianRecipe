@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            <h1 class="card-header-title is-centered"  >Hinzufügen</h1>
+            <h1 class="card-header-title is-centered">New Ingredient</h1>
         </div>
         <div class="card-content">
             <form v-model="form" @submit.prevent="submit">
@@ -13,11 +13,11 @@
                 <br>
                 <textarea class="form-control" style="height:70px;width:450px; font-size:18px" cols="90" v-model="form.description"/>
                 <br>
-                <strong >Menge:</strong>
+                <strong >Quantity:</strong>
                 <br>
                 <input type="number" style="font-size:18px" class="form-control" v-model="form.quantity"/>
                 <br>
-                <strong>Einheit:</strong>
+                <strong>Unit:</strong>
                 <br>
                 <select class="form-control"  style="font-size:18px" v-model="form.unit">
                     <option value="grams">grams</option>
@@ -25,7 +25,7 @@
                     <option value="pieces">pieces</option>
                 </select>
                 <br>
-                <strong>Für Rezept:</strong>
+                <strong>For Recipe:</strong>
                 <br>
                 <input type="number" style="font-size:20px" class="form-control" v-model="form.recipe_id"/>
                 <hr>
@@ -33,14 +33,14 @@
             </form>
         </div>
         <div class="card-footer">
-            <div class="card-footer-item" style="background-color: #b3d7b3">
-            <pre>
-                <p style="font-size:30px; color:#a1b164; font-weight: bold; text-align:center;"> P R E V I E W </p>
+            <div class="card-footer-item" style="background-color: #f6f8ed">
+            <pre class="my-pre">
+                <p style="font-size:30px; color:#00b89c; font-weight: bold; text-align:center;">PREVIEW</p>
                 <p style="font-size:18px; text-align:center; font-weight: bold">{{form.name}}</p>
                 <p style="font-size:16px">{{form.description}}</p>
-                <p style="font-weight:bold"> Menge: {{form.quantity}}</p>
-                <p style="font-weight:bold"> Einheit: {{form.unit}}</p>
-                <p style="font-weight:bold"> Für Rezept: {{form.recipe_id}}</p>
+                <p style="font-weight:bold"> Quantity: {{form.quantity}}</p>
+                <p style="font-weight:bold"> Unit: {{form.unit}}</p>
+                <p style="font-weight:bold"> For recipe: {{form.recipe_id}}</p>
                 <p>{{form.id}}</p>
             </pre>
             </div>
@@ -64,7 +64,7 @@
             QueryMessage
         },
         created(){
-            console.log("insert_ingerdient ist geladen");
+            console.log("insert_ingredient loaded");
         },
         data(){
             return{
@@ -95,7 +95,7 @@
         display: block;
         width: 100%;
         border: none;
-        background-color: #4caf50;
+        background-color: #00b89c;
         color: white;
         padding: 14px 28px;
         font-size: 20px;
@@ -103,11 +103,22 @@
         text-align: center;
     }
     .block:hover {
-        background-color: #ddd;
+        background-color: green;
         color: black;
     }
     hr {
         border: 3px solid #318b35;
         border-radius: 10px;
+    }
+
+    .my-pre{
+        background-color: rgb(244, 252, 226);
+        background-size:2.4em 2.4em;
+        background-origin:content-box;
+
+        /* some extra styles*/
+        padding:0 20px;
+        text-align:justify;
+        font-family:calibri,arial,sans-serif;
     }
 </style>

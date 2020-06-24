@@ -2455,11 +2455,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 var form = new Form({
   'slug': '',
   'name': '',
@@ -2588,18 +2583,6 @@ var rform = new Form({
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_recipe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit_recipe */ "./resources/js/components/recipe/edit_recipe.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -22376,27 +22359,19 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "card-footer" }, [
       _c("div", { staticClass: "card-footer-item" }, [
-        _vm._v("\n<<<<<<< HEAD\n                "),
-        _c("h1", { staticStyle: { "background-color": "orange" } }, [
-          _vm._v(
-            "You are now in EDIT-MODE. Every Change made here will be written directly to the Database. Please be carefull. See console.log for errors or success"
-          )
-        ]),
-        _vm._v("\n=======\n            "),
         _c("pre", [
-          _vm._v("                "),
+          _vm._v("            "),
           _c("p", [_vm._v(_vm._s((_vm.form.name = _vm.recipe.name)))]),
-          _vm._v("\n                "),
+          _vm._v("\n            "),
           _c("p", [
             _vm._v(_vm._s((_vm.form.description = _vm.recipe.description)))
           ]),
-          _vm._v("\n                "),
+          _vm._v("\n            "),
           _c("p", [_vm._v(_vm._s((_vm.form.recipe_id = _vm.recipe.recipeId)))]),
-          _vm._v("\n                "),
+          _vm._v("\n            "),
           _c("p", [_vm._v(_vm._s((_vm.form.slug = _vm.recipe.slug)))]),
-          _vm._v("\n            ")
-        ]),
-        _vm._v("\n>>>>>>> origin/master\n            ")
+          _vm._v("\n        ")
+        ])
       ])
     ])
   ])
@@ -22598,8 +22573,150 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "table-container is-fullwidth" },
+    [
+      _c("h1", [_vm._v("\n        A List of all Recipes! Enjoy!\n    ")]),
+      _vm._v(" "),
+      _vm._l(_vm.recipes, function(recipe) {
+        return _c("div", { key: recipe.id }, [
+          _c("h2", [
+            _vm._v("\n            " + _vm._s(recipe.name) + "\n        ")
+          ]),
+          _vm._v(" "),
+          _c("table", { staticClass: "table is-fullwidth" }, [
+            _vm._m(0, true),
+            _vm._v(" "),
+            _c("tbody", [
+              _c(
+                "tr",
+                {
+                  staticClass: "hover",
+                  on: {
+                    click: function($event) {
+                      return _vm.openRecipeDetails(recipe)
+                    }
+                  }
+                },
+                [
+                  _c("th", [_vm._v(_vm._s(recipe.id))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(recipe.slug))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(recipe.description))])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("\n        Ingredients\n    ")]),
+          _vm._v(" "),
+          _c("div", [
+            _c("table", { staticClass: "table is-fullwidth" }, [
+              _vm._m(1, true),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.filtering_all(_vm.ingredients, recipe.id), function(
+                  ingredient
+                ) {
+                  return _c(
+                    "tr",
+                    { key: ingredient.id, staticClass: "hover" },
+                    [
+                      _c("th", [_vm._v(_vm._s(ingredient.id))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.name))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.description))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.unit))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.quantity))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.slug))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.recipe_id))])
+                    ]
+                  )
+                }),
+                0
+              )
+            ])
+          ])
+        ])
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "overlay", attrs: { id: "recipeDetails" } }, [
+        _c(
+          "a",
+          {
+            staticClass: "closebtn",
+            attrs: { href: "javascript:void(0)" },
+            on: {
+              click: function($event) {
+                return _vm.closeDetails()
+              }
+            }
+          },
+          [_vm._v("×")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "overlay-content" },
+          [_c("edit-recipe", { attrs: { recipe: _vm.recipe } })],
+          1
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { staticClass: "title is-6" }, [
+        _c("th", [_vm._v("ID")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Slug")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Description")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { staticClass: "title is-5" }, [
+        _c("th", [_vm._v("ID")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Description")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Unit")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Quantity")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("slug")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Recipe ID")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 

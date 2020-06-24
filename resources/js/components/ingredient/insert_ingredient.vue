@@ -6,35 +6,43 @@
         <div class="card-content">
             <form v-model="form" @submit.prevent="submit">
                 <strong>Name:</strong>
-                <input type="text" class="form-control" v-model="form.name"/>
+                <br>
+                <input type="text" style="font-size:20px" class="form-control" v-model="form.name"/>
+                <br>
                 <strong>Description:</strong>
-                <textarea class="form-control" v-model="form.description"/>
-                <strong>Menge:</strong>
-                <input type="number"  class="form-control" v-model="form.quantity"/>
+                <br>
+                <textarea class="form-control" style="height:70px;width:450px; font-size:18px" cols="90" v-model="form.description"/>
+                <br>
+                <strong >Menge:</strong>
+                <br>
+                <input type="number" style="font-size:18px" class="form-control" v-model="form.quantity"/>
+                <br>
                 <strong>Einheit:</strong>
-                <select class="form-control" v-model="form.unit">
+                <br>
+                <select class="form-control"  style="font-size:18px" v-model="form.unit">
                     <option value="grams">grams</option>
                     <option value="milliliters">milliliters</option>
                     <option value="pieces">pieces</option>
                 </select>
+                <br>
                 <strong>Für Rezept:</strong>
-                <input type="number" class="form-control" v-model="form.recipe_id"/>
-                <button class="btn btn-success">Submit</button>
+                <br>
+                <input type="number" style="font-size:20px" class="form-control" v-model="form.recipe_id"/>
+                <hr>
+                <button class="block">Submit</button>
             </form>
         </div>
         <div class="card-footer">
-            <div class="card-footer-item">
+            <div class="card-footer-item" style="background-color: #b3d7b3">
             <pre>
-                <p>{{form.name}}</p>
-                <p>{{form.description}}</p>
-                <p>{{form.quantity}}</p>
-                <p>{{form.unit}}</p>
-                <p>{{form.recipe_id}}</p>
+                <p style="font-size:30px; color:#a1b164; font-weight: bold; text-align:center;"> P R E V I E W </p>
+                <p style="font-size:18px; text-align:center; font-weight: bold">{{form.name}}</p>
+                <p style="font-size:16px">{{form.description}}</p>
+                <p style="font-weight:bold"> Menge: {{form.quantity}}</p>
+                <p style="font-weight:bold"> Einheit: {{form.unit}}</p>
+                <p style="font-weight:bold"> Für Rezept: {{form.recipe_id}}</p>
                 <p>{{form.id}}</p>
             </pre>
-            </div>
-            <div class="card-footer-item">
-                <h1>Irgend ein Text</h1>
             </div>
         </div>
     </div>
@@ -83,5 +91,23 @@
 </script>
 
 <style scoped>
-
+    .block {
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 28px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .block:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    hr {
+        border: 3px solid #318b35;
+        border-radius: 10px;
+    }
 </style>

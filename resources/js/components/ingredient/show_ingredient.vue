@@ -11,8 +11,7 @@
                 <th>Description</th>
                 <th>Unit</th>
                 <th width="6%">Quantity</th>
-                <th>Slug</th>
-                <th width="6%">Recipe ID</th>
+                <th width="6%">Recipe Name</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +21,6 @@
                 <th width="1000px">{{ingredient.description}}</th>
                 <th>{{ingredient.unit}}</th>
                 <th>{{ingredient.quantity}}</th>
-                <th>{{ingredient.slug}}</th>
                 <th>{{ingredient.recipe_id}}</th>
             </tr>
         </tbody>

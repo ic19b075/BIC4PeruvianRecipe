@@ -2377,19 +2377,6 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    getIngredientList: function getIngredientList() {
-      var _this2 = this;
-
-      axios.get('/list/ingredient').then(function (response) {
-        console.log(response.data);
-        return response.data;
-      }).then(function (jsonData) {
-        _this2.ingredients = jsonData;
-        console.log(_this2.ingredients);
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    },
     openIngredientDetails: function openIngredientDetails(value) {
       document.getElementById("ingredientDetails").style.width = "100%";
       console.log(value);
@@ -2404,11 +2391,11 @@ __webpack_require__.r(__webpack_exports__);
       console.log(this.ingredient.name);
     },
     closeDetails: function closeDetails() {
-      var _this3 = this;
+      var _this2 = this;
 
       document.getElementById("ingredientDetails").style.width = "0%";
       axios.get('./list/ingredient').then(function (response) {
-        return _this3.ingredients = response.data;
+        return _this2.ingredients = response.data;
       })["catch"](function (e) {
         return console.log(e);
       });
@@ -2650,7 +2637,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "show_recipe.vue",
@@ -2795,7 +2781,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.overlay[data-v-5c9fdfc0] {\n    height: 100%;\n    width: 0;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    left: 0;\n    background-color: white;\n    background-color: white;\n    overflow-x: hidden;\n    transition: 0.5s;\n}\n.test[data-v-5c9fdfc0]:hover {\n    background: aquamarine;\n}\n.overlay-content[data-v-5c9fdfc0] {\n    position: relative;\n    top: 25%;\n    width: 100%;\n    text-align: center;\n    margin-top: 30px;\n}\n.overlay a[data-v-5c9fdfc0] {\n    padding: 8px;\n    text-decoration: none;\n    font-size: 36px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n.overlay a[data-v-5c9fdfc0]:hover, .overlay a[data-v-5c9fdfc0]:focus {\n    color: #f1f1f1;\n}\n.overlay .closebtn[data-v-5c9fdfc0] {\n    position: absolute;\n    top: 20px;\n    right: 45px;\n    font-size: 60px;\n}\n", ""]);
+exports.push([module.i, "\n.hover[data-v-5c9fdfc0]:hover {\n    background: aquamarine;\n}\n.overlay[data-v-5c9fdfc0] {\n    height: 100%;\n    width: 0;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    left: 0;\n    background-color: white;\n    background-color: white;\n    overflow-x: hidden;\n    transition: 0.5s;\n}\n.overlay-content[data-v-5c9fdfc0] {\n    position: relative;\n    top: 25%;\n    width: 100%;\n    text-align: center;\n    margin-top: 30px;\n}\n.overlay a[data-v-5c9fdfc0] {\n    padding: 8px;\n    text-decoration: none;\n    font-size: 36px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n.overlay a[data-v-5c9fdfc0]:hover, .overlay a[data-v-5c9fdfc0]:focus {\n    color: #f1f1f1;\n}\n.overlay .closebtn[data-v-5c9fdfc0] {\n    position: absolute;\n    top: 20px;\n    right: 45px;\n    font-size: 60px;\n}\n", ""]);
 
 // exports
 
@@ -2814,7 +2800,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*table, th, td {*/\n/*    border: 1px solid black;*/\n/*}*/\ntr[data-v-966c07cc]:hover {\n    background: azure;\n}\n.overlay[data-v-966c07cc] {\n    height: 100%;\n    width: 0;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    left: 0;\n    background-color: white;\n    background-color: white;\n    overflow-x: hidden;\n    transition: 0.5s;\n}\n.overlay-content[data-v-966c07cc] {\n    position: relative;\n    top: 25%;\n    width: 100%;\n    text-align: center;\n    margin-top: 30px;\n}\n.overlay a[data-v-966c07cc] {\n    padding: 8px;\n    text-decoration: none;\n    font-size: 36px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n.overlay a[data-v-966c07cc]:hover, .overlay a[data-v-966c07cc]:focus {\n    color: #f1f1f1;\n}\n.overlay .closebtn[data-v-966c07cc] {\n    position: absolute;\n    top: 20px;\n    right: 45px;\n    font-size: 60px;\n}\n", ""]);
+exports.push([module.i, "\n.hover[data-v-966c07cc]:hover {\n    background: aquamarine;\n}\n.overlay[data-v-966c07cc] {\n    height: 100%;\n    width: 0;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    left: 0;\n    background-color: white;\n    background-color: white;\n    overflow-x: hidden;\n    transition: 0.5s;\n}\n.overlay-content[data-v-966c07cc] {\n    position: relative;\n    top: 25%;\n    width: 100%;\n    text-align: center;\n    margin-top: 30px;\n}\n.overlay a[data-v-966c07cc] {\n    padding: 8px;\n    text-decoration: none;\n    font-size: 36px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n.overlay a[data-v-966c07cc]:hover, .overlay a[data-v-966c07cc]:focus {\n    color: #f1f1f1;\n}\n.overlay .closebtn[data-v-966c07cc] {\n    position: absolute;\n    top: 20px;\n    right: 45px;\n    font-size: 60px;\n}\n", ""]);
 
 // exports
 
@@ -21869,7 +21855,7 @@ var render = function() {
   return _c("div", { staticClass: "table-container is-fullwidth" }, [
     _c("h1", [_vm._v("\n        All Ingredients\n    ")]),
     _vm._v(" "),
-    _c("table", { staticClass: "table is-fullwidth is-hoverable" }, [
+    _c("table", { staticClass: "table is-fullwidth" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
@@ -21879,6 +21865,7 @@ var render = function() {
             "tr",
             {
               key: ingredient.id,
+              staticClass: "hover",
               on: {
                 click: function($event) {
                   return _vm.openIngredientDetails(ingredient)
@@ -22249,15 +22236,16 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.recipes, function(recipe) {
         return _c("div", { key: recipe.id }, [
-          _c("h1", [_vm._v("\n            Rezept\n        ")]),
+          _c("h1", [_vm._v("\n            Recipe\n        ")]),
           _vm._v(" "),
-          _c("table", { staticClass: "table is-fullwidth is-hoverable" }, [
+          _c("table", { staticClass: "table is-fullwidth" }, [
             _vm._m(0, true),
             _vm._v(" "),
             _c("tbody", [
               _c(
                 "tr",
                 {
+                  staticClass: "hover",
                   on: {
                     click: function($event) {
                       return _vm.openRecipeDetails(recipe)
@@ -22277,10 +22265,10 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("h1", [_vm._v("\n        Zutaten\n    ")]),
+          _c("h1", [_vm._v("\n        Ingredients\n    ")]),
           _vm._v(" "),
           _c("div", [
-            _c("table", { staticClass: "table is-fullwidth is-hoverable" }, [
+            _c("table", { staticClass: "table is-fullwidth" }, [
               _vm._m(1, true),
               _vm._v(" "),
               _c(
@@ -22288,21 +22276,25 @@ var render = function() {
                 _vm._l(_vm.filtering_all(_vm.ingredients, recipe.id), function(
                   ingredient
                 ) {
-                  return _c("tr", { key: ingredient.id }, [
-                    _c("th", [_vm._v(_vm._s(ingredient.id))]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v(_vm._s(ingredient.name))]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v(_vm._s(ingredient.description))]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v(_vm._s(ingredient.unit))]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v(_vm._s(ingredient.quantity))]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v(_vm._s(ingredient.slug))]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v(_vm._s(ingredient.recipe_id))])
-                  ])
+                  return _c(
+                    "tr",
+                    { key: ingredient.id, staticClass: "hover" },
+                    [
+                      _c("th", [_vm._v(_vm._s(ingredient.id))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.name))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.description))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.unit))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.quantity))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.slug))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(ingredient.recipe_id))])
+                    ]
+                  )
                 }),
                 0
               )
@@ -22343,14 +22335,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("tr", { attrs: { cass: "title is-6" } }, [
+      _c("tr", { staticClass: "title is-6" }, [
         _c("th", [_vm._v("ID")]),
         _vm._v(" "),
         _c("th", [_vm._v("Slug")]),
         _vm._v(" "),
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Beschreibung")])
+        _c("th", [_vm._v("Description")])
       ])
     ])
   },
@@ -22359,20 +22351,20 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("tr", { attrs: { cass: "title is-5" } }, [
+      _c("tr", { staticClass: "title is-5" }, [
         _c("th", [_vm._v("ID")]),
         _vm._v(" "),
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Beschreibung")]),
+        _c("th", [_vm._v("Description")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Eiheit")]),
+        _c("th", [_vm._v("Unit")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Menge")]),
+        _c("th", [_vm._v("Quantity")]),
         _vm._v(" "),
         _c("th", [_vm._v("slug")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Recipe_id")])
+        _c("th", [_vm._v("Recipe ID")])
       ])
     ])
   }
@@ -35129,14 +35121,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************************!*\
   !*** ./resources/js/components/ingredient/show_ingredient.vue ***!
   \****************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _show_ingredient_vue_vue_type_template_id_5c9fdfc0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./show_ingredient.vue?vue&type=template&id=5c9fdfc0&scoped=true& */ "./resources/js/components/ingredient/show_ingredient.vue?vue&type=template&id=5c9fdfc0&scoped=true&");
 /* harmony import */ var _show_ingredient_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./show_ingredient.vue?vue&type=script&lang=js& */ "./resources/js/components/ingredient/show_ingredient.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _show_ingredient_vue_vue_type_style_index_0_id_5c9fdfc0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./show_ingredient.vue?vue&type=style&index=0&id=5c9fdfc0&scoped=true&lang=css& */ "./resources/js/components/ingredient/show_ingredient.vue?vue&type=style&index=0&id=5c9fdfc0&scoped=true&lang=css&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _show_ingredient_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _show_ingredient_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _show_ingredient_vue_vue_type_style_index_0_id_5c9fdfc0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./show_ingredient.vue?vue&type=style&index=0&id=5c9fdfc0&scoped=true&lang=css& */ "./resources/js/components/ingredient/show_ingredient.vue?vue&type=style&index=0&id=5c9fdfc0&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -35168,7 +35161,7 @@ component.options.__file = "resources/js/components/ingredient/show_ingredient.v
 /*!*****************************************************************************************!*\
   !*** ./resources/js/components/ingredient/show_ingredient.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

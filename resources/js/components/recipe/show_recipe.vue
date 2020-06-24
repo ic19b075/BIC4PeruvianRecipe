@@ -1,18 +1,17 @@
 <template>
     <div class="table-container is-fullwidth">
         <h1>
-            All Recipes
+            A List of all Recipes! Enjoy!
         </h1>
-        <div class="card" v-for="recipe in recipes" :key="recipe.id">
-            <h1>
-                Recipe
-            </h1>
+        <div v-for="recipe in recipes" :key="recipe.id">
+            <h2>
+                {{recipe.name}}
+            </h2>
             <table class="table is-fullwidth" >
             <thead>
             <tr class="title is-6">
                 <th>ID</th>
                 <th>Slug</th>
-                <th>Name</th>
                 <th>Description</th>
             </tr>
             </thead>
@@ -20,15 +19,13 @@
             <tr class ="hover" v-on:click="openRecipeDetails(recipe)">
                 <th>{{recipe.id}}</th>
                 <th>{{recipe.slug}}</th>
-                <th>{{recipe.name}}</th>
                 <th>{{recipe.description}}</th>
             </tr>
             </tbody>
         </table>
-
-        <h1>
+        <h3>
             Ingredients
-        </h1>
+        </h3>
             <div >
                 <table class="table is-fullwidth">
                     <thead>
@@ -55,10 +52,6 @@
                     </tbody>
                 </table>
             </div>
-        <div class="card-footer">
-            <h1> </h1>
-            </br>
-        </div>
         </div>
         <div id="recipeDetails" class="overlay">
             <a href="javascript:void(0)" class="closebtn" v-on:click="closeDetails()">&times;</a>
@@ -66,7 +59,6 @@
                 <edit-recipe :recipe="recipe"></edit-recipe>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -87,7 +79,6 @@
             }
         },
         created() {
-            //console.log("Component show_recipe eingebunden");
             axios.get('./list/recipe')
                 .then(response => this.recipes = response.data)
                 .catch(e => console.log(e));
@@ -103,8 +94,7 @@
                     list.push(inPut[i]);
                 }
             };
-        //console.log("Funktion wurde druchlaufen")
-        //console.log(list);
+
         return list;
         },
             openRecipeDetails(recipe) {
@@ -125,10 +115,7 @@
                     .catch(e => console.log(e));
             }
         }
-
     }
-
-
 
 </script>
 
@@ -177,6 +164,19 @@
         top: 20px;
         right: 45px;
         font-size: 60px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+        color: darkcyan;
+    }
+
+    h3 {
+        text-align: center;
+        font-weight: bold;
+        color: #00b89c;
+        font-size: larger;
     }
 </style>
 

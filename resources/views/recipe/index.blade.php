@@ -8,6 +8,5 @@
                 <show_recipe></show_recipe>
             </div>
         </div>
-       <!--<script src="{{asset('js/app.js')}}"></script>-->
     </section>
 @endsection

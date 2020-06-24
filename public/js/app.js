@@ -2064,7 +2064,7 @@ var form = new Form({
   },
   props: ['ingredient'],
   created: function created() {
-    console.log("edit_ingredient ist geladen");
+    console.log("edit_ingredient loaded");
   },
   data: function data() {
     return {
@@ -2383,7 +2383,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    console.log("Component show_ingredient eingebunden");
+    console.log("Component show_ingredient loaded");
     axios.get('./list/ingredient').then(function (response) {
       return _this.ingredients = response.data;
     })["catch"](function (e) {
@@ -2451,6 +2451,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var form = new Form({
   'slug': '',
   'name': '',
@@ -2464,7 +2473,7 @@ var form = new Form({
   },
   props: ['recipe'],
   created: function created() {
-    console.log("edit_recipe ist geladen");
+    console.log("edit_recipe loaded");
   },
   data: function data() {
     return {
@@ -2542,7 +2551,7 @@ var rform = new Form({
     QueryMessage: QueryMessage
   },
   created: function created() {
-    console.log("insert_recipe.vue ist geladen");
+    console.log("insert_recipe loaded");
   },
   data: function data() {
     return {
@@ -2651,6 +2660,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "show_recipe.vue",
@@ -2671,7 +2684,6 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    //console.log("Component show_recipe eingebunden");
     axios.get('./list/recipe').then(function (response) {
       return _this.recipes = response.data;
     })["catch"](function (e) {
@@ -2693,9 +2705,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      ; //console.log("Funktion wurde druchlaufen")
-      //console.log(list);
-
+      ;
       return list;
     },
     openRecipeDetails: function openRecipeDetails(recipe) {
@@ -2871,7 +2881,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.hover[data-v-966c07cc]:hover {\n    background: aquamarine;\n}\n.overlay[data-v-966c07cc] {\n    height: 100%;\n    width: 0;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    left: 0;\n    background-color: white;\n    background-color: white;\n    overflow-x: hidden;\n    transition: 0.5s;\n}\n.overlay-content[data-v-966c07cc] {\n    position: relative;\n    top: 25%;\n    width: 100%;\n    text-align: center;\n    margin-top: 30px;\n}\n.overlay a[data-v-966c07cc] {\n    padding: 8px;\n    text-decoration: none;\n    font-size: 36px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n.overlay a[data-v-966c07cc]:hover, .overlay a[data-v-966c07cc]:focus {\n    color: #f1f1f1;\n}\n.overlay .closebtn[data-v-966c07cc] {\n    position: absolute;\n    top: 20px;\n    right: 45px;\n    font-size: 60px;\n}\n", ""]);
+exports.push([module.i, "\n.hover[data-v-966c07cc]:hover {\n    background: aquamarine;\n}\n.overlay[data-v-966c07cc] {\n    height: 100%;\n    width: 0;\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    left: 0;\n    background-color: white;\n    background-color: white;\n    overflow-x: hidden;\n    transition: 0.5s;\n}\n.overlay-content[data-v-966c07cc] {\n    position: relative;\n    top: 25%;\n    width: 100%;\n    text-align: center;\n    margin-top: 30px;\n}\n.overlay a[data-v-966c07cc] {\n    padding: 8px;\n    text-decoration: none;\n    font-size: 36px;\n    color: #818181;\n    display: block;\n    transition: 0.3s;\n}\n.overlay a[data-v-966c07cc]:hover, .overlay a[data-v-966c07cc]:focus {\n    color: #f1f1f1;\n}\n.overlay .closebtn[data-v-966c07cc] {\n    position: absolute;\n    top: 20px;\n    right: 45px;\n    font-size: 60px;\n}\nh2[data-v-966c07cc] {\n    text-align: center;\n    font-weight: bold;\n    color: darkcyan;\n}\nh3[data-v-966c07cc] {\n    text-align: center;\n    font-weight: bold;\n    color: #00b89c;\n    font-size: larger;\n}\n", ""]);
 
 // exports
 
@@ -21519,7 +21529,7 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("strong", [_vm._v(" Für Rezept: ")]),
+            _c("strong", [_vm._v(" For Recipe: ")]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -22005,7 +22015,7 @@ var render = function() {
           _c("div", { staticClass: "content" }, [
             _c("div", { staticClass: "field" }, [
               _c("label", { staticClass: "label" }, [
-                _vm._v("Search by name or description")
+                _vm._v("Name or description")
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "control" }, [
@@ -22179,7 +22189,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "table-container is-fullwidth" }, [
-    _c("h1", [_vm._v("\n        All Ingredients\n    ")]),
+    _c("h1", [_vm._v("\n       Browse all Ingredients!\n    ")]),
     _vm._v(" "),
     _c("table", { staticClass: "table is-fullwidth" }, [
       _vm._m(0),
@@ -22203,7 +22213,9 @@ var render = function() {
               _vm._v(" "),
               _c("th", [_vm._v(_vm._s(ingredient.name))]),
               _vm._v(" "),
-              _c("th", [_vm._v(_vm._s(ingredient.description))]),
+              _c("th", { attrs: { width: "1000px" } }, [
+                _vm._v(_vm._s(ingredient.description))
+              ]),
               _vm._v(" "),
               _c("th", [_vm._v(_vm._s(ingredient.unit))]),
               _vm._v(" "),
@@ -22362,7 +22374,31 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(1)
+    _c("div", { staticClass: "card-footer" }, [
+      _c("div", { staticClass: "card-footer-item" }, [
+        _vm._v("\n<<<<<<< HEAD\n                "),
+        _c("h1", { staticStyle: { "background-color": "orange" } }, [
+          _vm._v(
+            "You are now in EDIT-MODE. Every Change made here will be written directly to the Database. Please be carefull. See console.log for errors or success"
+          )
+        ]),
+        _vm._v("\n=======\n            "),
+        _c("pre", [
+          _vm._v("                "),
+          _c("p", [_vm._v(_vm._s((_vm.form.name = _vm.recipe.name)))]),
+          _vm._v("\n                "),
+          _c("p", [
+            _vm._v(_vm._s((_vm.form.description = _vm.recipe.description)))
+          ]),
+          _vm._v("\n                "),
+          _c("p", [_vm._v(_vm._s((_vm.form.recipe_id = _vm.recipe.recipeId)))]),
+          _vm._v("\n                "),
+          _c("p", [_vm._v(_vm._s((_vm.form.slug = _vm.recipe.slug)))]),
+          _vm._v("\n            ")
+        ]),
+        _vm._v("\n>>>>>>> origin/master\n            ")
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -22373,20 +22409,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title is-centered" }, [
         _vm._v("Edit")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer" }, [
-      _c("div", { staticClass: "card-footer-item" }, [
-        _c("h1", { staticStyle: { "background-color": "orange" } }, [
-          _vm._v(
-            "You are now in EDIT-MODE. Every Change made here will be written directly to the Database. Please be carefull. See console.log for errors or success"
-          )
-        ])
       ])
     ])
   }
@@ -22554,7 +22576,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title is-centered" }, [
-        _vm._v("Hinzufügen")
+        _vm._v("New Recipe")
       ])
     ])
   }
@@ -22576,164 +22598,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "table-container is-fullwidth" },
-    [
-      _c("h1", [_vm._v("\n        All Recipes\n    ")]),
-      _vm._v(" "),
-      _vm._l(_vm.recipes, function(recipe) {
-        return _c("div", { key: recipe.id, staticClass: "card" }, [
-          _c("h1", [_vm._v("\n            Recipe\n        ")]),
-          _vm._v(" "),
-          _c("table", { staticClass: "table is-fullwidth" }, [
-            _vm._m(0, true),
-            _vm._v(" "),
-            _c("tbody", [
-              _c(
-                "tr",
-                {
-                  staticClass: "hover",
-                  on: {
-                    click: function($event) {
-                      return _vm.openRecipeDetails(recipe)
-                    }
-                  }
-                },
-                [
-                  _c("th", [_vm._v(_vm._s(recipe.id))]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v(_vm._s(recipe.slug))]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v(_vm._s(recipe.name))]),
-                  _vm._v(" "),
-                  _c("th", [_vm._v(_vm._s(recipe.description))])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("h1", [_vm._v("\n        Ingredients\n    ")]),
-          _vm._v(" "),
-          _c("div", [
-            _c("table", { staticClass: "table is-fullwidth" }, [
-              _vm._m(1, true),
-              _vm._v(" "),
-              _c(
-                "tbody",
-                _vm._l(_vm.filtering_all(_vm.ingredients, recipe.id), function(
-                  ingredient
-                ) {
-                  return _c(
-                    "tr",
-                    { key: ingredient.id, staticClass: "hover" },
-                    [
-                      _c("th", [_vm._v(_vm._s(ingredient.id))]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v(_vm._s(ingredient.name))]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v(_vm._s(ingredient.description))]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v(_vm._s(ingredient.unit))]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v(_vm._s(ingredient.quantity))]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v(_vm._s(ingredient.slug))]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v(_vm._s(ingredient.recipe_id))])
-                    ]
-                  )
-                }),
-                0
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(2, true)
-        ])
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "overlay", attrs: { id: "recipeDetails" } }, [
-        _c(
-          "a",
-          {
-            staticClass: "closebtn",
-            attrs: { href: "javascript:void(0)" },
-            on: {
-              click: function($event) {
-                return _vm.closeDetails()
-              }
-            }
-          },
-          [_vm._v("×")]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "overlay-content" },
-          [_c("edit-recipe", { attrs: { recipe: _vm.recipe } })],
-          1
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", { staticClass: "title is-6" }, [
-        _c("th", [_vm._v("ID")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Slug")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Description")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", { staticClass: "title is-5" }, [
-        _c("th", [_vm._v("ID")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Description")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Unit")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Quantity")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("slug")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Recipe ID")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer" }, [
-      _c("h1"),
-      _vm._v(" "),
-      _c("br")
-    ])
-  }
-]
-render._withStripped = true
+var render = function () {}
+var staticRenderFns = []
 
 
 

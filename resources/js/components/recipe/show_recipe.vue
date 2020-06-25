@@ -16,7 +16,7 @@
             </thead>
             <tbody>
             <tr class ="hover" v-on:click="openRecipeDetails(recipe)">
-                <th>{{recipe.id}}</th>
+                <th v-bind:id="recipe.id">{{recipe.id}}</th>
                 <th>{{recipe.description}}</th>
             </tr>
             </tbody>
@@ -83,6 +83,13 @@
             axios.get('./list/ingredient')
                 .then(response => this.ingredients = response.data)
                 .catch(e => console.log(e));
+        },
+        updated() {
+            let recipeName = window.location.href.split("#");
+            if(typeof(recipeName[1] !== 'undefined')) {
+                var element = document.getElementById(recipeName[1]);
+                element.scrollIntoView();
+            }
         },
         methods:{
             filtering_all(inPut, filterKey){

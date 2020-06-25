@@ -22,7 +22,7 @@
                 <th>{{ingredient.unit}}</th>
                 <th>{{ingredient.quantity}}</th>
                 <th>
-                    <button type="button" v-on:click.stop.prevent="openRecipeList()">{{ingredient.recipe_id}}</button>
+                    <button type="button" v-on:click.stop.prevent="openRecipeList(ingredient.recipe_id)">{{ingredient.recipe_id}}</button>
                 </th>
             </tr>
         </tbody>
@@ -81,8 +81,9 @@
                     .then(response => this.ingredients = response.data)
                     .catch(e => console.log(e));
             },
-            openRecipeList() {
-                window.location.replace('./recipe');
+            openRecipeList(receptReference) {
+                this.ingredient.recipeId = receptReference
+                window.location = './recipe#'+this.ingredient.recipeId;
             }
         }
 

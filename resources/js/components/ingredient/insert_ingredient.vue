@@ -27,7 +27,9 @@
                 <br>
                 <strong>For Recipe:</strong>
                 <br>
-                <input type="number" style="font-size:20px" class="form-control" v-model="form.recipe_id"/>
+                <select style="font-size:20px" class="form-control" v-model="form.recipe_id">
+                    <option v-for="recipe in recipes" :key="recipe.id" value="recipe.id">{{recipe.name}}</option>
+                </select>
                 <hr>
                 <button class="block">Submit</button>
             </form>
@@ -65,11 +67,19 @@
         },
         created(){
             console.log("insert_ingredient loaded");
+            axios.get('../list/recipe')
+                .then(response => {
+                    this.recipes = response.data;
+                    console.log("Inhalt recipies");
+                    console.log(this.recipes);
+                })
+                .catch(e => console.log(e));
         },
         data(){
             return{
                 form:form,
-                url:''
+                url:'',
+                recipes:[],
             }
         },
         methods:{

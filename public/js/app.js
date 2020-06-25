@@ -2148,6 +2148,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var form = new Form({
   'id': '',
   'slug': '',
@@ -2163,24 +2165,34 @@ var form = new Form({
     QueryMessage: QueryMessage
   },
   created: function created() {
+    var _this = this;
+
     console.log("insert_ingredient loaded");
+    axios.get('../list/recipe').then(function (response) {
+      _this.recipes = response.data;
+      console.log("Inhalt recipies");
+      console.log(_this.recipes);
+    })["catch"](function (e) {
+      return console.log(e);
+    });
   },
   data: function data() {
     return {
       form: form,
-      url: ''
+      url: '',
+      recipes: []
     };
   },
   methods: {
     submit: function submit() {
-      var _this = this;
+      var _this2 = this;
 
       this.url = '/ingredient';
       this.form.post(this.url).then(function (response) {
         console.log(response);
       })["catch"](function (error) {
         console.log("Errormessage:");
-        console.log(_this.form.failMessage);
+        console.log(_this2.form.failMessage);
       });
     }
   }
@@ -21839,28 +21851,46 @@ var render = function() {
           _vm._v(" "),
           _c("br"),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.form.recipe_id,
-                expression: "form.recipe_id"
-              }
-            ],
-            staticClass: "form-control",
-            staticStyle: { "font-size": "20px" },
-            attrs: { type: "number" },
-            domProps: { value: _vm.form.recipe_id },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.recipe_id,
+                  expression: "form.recipe_id"
                 }
-                _vm.$set(_vm.form, "recipe_id", $event.target.value)
+              ],
+              staticClass: "form-control",
+              staticStyle: { "font-size": "20px" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.form,
+                    "recipe_id",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                }
               }
-            }
-          }),
+            },
+            _vm._l(_vm.recipes, function(recipe) {
+              return _c(
+                "option",
+                { key: recipe.id, attrs: { value: "recipe.id" } },
+                [_vm._v(_vm._s(recipe.name))]
+              )
+            }),
+            0
+          ),
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),

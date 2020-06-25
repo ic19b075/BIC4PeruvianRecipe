@@ -1,7 +1,7 @@
 <template>
     <div class="table-container is-fullwidth">
         <h1>
-            A List_of all Recipes! Enjoy!
+            A List of all Recipes! Enjoy!
         </h1>
         <div v-for="recipe in recipes" :key="recipe.id">
             <h2>
@@ -11,14 +11,12 @@
             <thead>
             <tr class="title is-6">
                 <th>ID</th>
-                <th>Slug</th>
                 <th>Description</th>
             </tr>
             </thead>
             <tbody>
             <tr class ="hover" v-on:click="openRecipeDetails(recipe)">
                 <th>{{recipe.id}}</th>
-                <th>{{recipe.slug}}</th>
                 <th>{{recipe.description}}</th>
             </tr>
             </tbody>
@@ -30,7 +28,7 @@
                 <table class="table is-fullwidth">
                     <thead>
                     <tr class="title is-5">
-                        <th>ID</th>
+                        <th >ID</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>Unit</th>

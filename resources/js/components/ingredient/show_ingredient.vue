@@ -22,7 +22,7 @@
                 <th>{{ingredient.unit}}</th>
                 <th>{{ingredient.quantity}}</th>
                 <th>
-                    <button type="button" v-on:click.stop.prevent="openRecipeList(ingredient.recipe_id)">{{ingredient.recipe_id}}</button>
+                    <button style = "background: #1f5581" class= "card-header-title" type="button" v-on:click.stop.prevent="openRecipeList(ingredient.recipe_id)">Go to recipe {{ingredient.recipe_id}}</button>
                 </th>
             </tr>
         </tbody>

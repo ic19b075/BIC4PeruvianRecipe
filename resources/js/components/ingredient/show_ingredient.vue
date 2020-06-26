@@ -15,14 +15,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr  class="hover" v-for="ingredient in ingredients" :key="ingredient.id" v-on:click.stop.prevent="openIngredientDetails(ingredient)">
+            <tr v-on:load="mapRecipeIdToName(12)" class="hover" v-for="ingredient in ingredients" :key="ingredient.id" v-on:click.stop.prevent="openIngredientDetails(ingredient)">
                 <th>{{ingredient.id}}</th>
                 <th>{{ingredient.name}}</th>
                 <th width="1000px">{{ingredient.description}}</th>
                 <th>{{ingredient.unit}}</th>
                 <th>{{ingredient.quantity}}</th>
-                <th>
-                    <button style = "background: #1f5581" class= "card-header-title" type="button" v-on:click.stop.prevent="openRecipeList(ingredient.recipe_id)">Go to recipe {{ingredient.recipe_id}}</button>
+                <th v-if="!loading">
+                    <button style = "background: #1f5581" class= "card-header-title" type="button" v-on:click.stop.prevent="openRecipeList(ingredient.recipe_id)">Go to recipe {{recipes[ingredient.recipe_id-1].name}}</button>
                 </th>
             </tr>
         </tbody>
@@ -42,6 +42,7 @@
         data(){
             return{
                 ingredients:[],
+                recipes:[],
                 ingredient: {
                     id : 0,
                     name: '',
@@ -51,17 +52,27 @@
                     slug: '',
                     recipeId: '',
                     updateDate: ''
-                }
+                },
+                loading: false
             }
         },
         created() {
+            this.loading = true;
             console.log("Component show_ingredient loaded");
             axios.get('./list/ingredient')
-                .then(response => this.ingredients = response.data)
+                .then(response => {
+                    this.ingredients = response.data;
+                })
                 .catch(e => console.log(e));
+            axios.get('./list/recipe')
+                .then(response => {
+                    this.recipes = response.data;
+                    this.loading = false;
+                })
+                .catch(e => console.log(e));
+            this.loading = true;
         },
         methods: {
-
             openIngredientDetails(value) {
                 document.getElementById("ingredientDetails").style.width = "100%";
                 console.log(value);

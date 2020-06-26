@@ -2150,6 +2150,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 var form = new Form({
   'id': '',
   'slug': '',
@@ -2422,8 +2427,9 @@ __webpack_require__.r(__webpack_exports__);
         return console.log(e);
       });
     },
-    openRecipeList: function openRecipeList() {
-      window.location.replace('./recipe');
+    openRecipeList: function openRecipeList(receptReference) {
+      this.ingredient.recipeId = receptReference;
+      window.location = './recipe#' + this.ingredient.recipeId;
     }
   }
 });
@@ -2594,6 +2600,8 @@ var rform = new Form({
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_recipe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit_recipe */ "./resources/js/components/recipe/edit_recipe.vue");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 //
 //
 //
@@ -2686,6 +2694,14 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (e) {
       return console.log(e);
     });
+  },
+  updated: function updated() {
+    var recipeName = window.location.href.split("#");
+
+    if (_typeof(recipeName[1] !== 'undefined')) {
+      var element = document.getElementById(recipeName[1]);
+      element.scrollIntoView();
+    }
   },
   methods: {
     filtering_all: function filtering_all(inPut, filterKey) {
@@ -21885,7 +21901,7 @@ var render = function() {
             _vm._l(_vm.recipes, function(recipe) {
               return _c(
                 "option",
-                { key: recipe.id, attrs: { value: "recipe.id" } },
+                { key: recipe.id, domProps: { value: recipe.id } },
                 [_vm._v(_vm._s(recipe.name))]
               )
             }),
@@ -21934,9 +21950,11 @@ var render = function() {
               [_vm._v(_vm._s(_vm.form.name))]
             ),
             _vm._v("\n            "),
-            _c("p", { staticStyle: { "font-size": "16px" } }, [
-              _vm._v(_vm._s(_vm.form.description))
-            ]),
+            _c(
+              "p",
+              { staticStyle: { "font-size": "16px", "max-width": "30em" } },
+              [_vm._v(_vm._s(_vm.form.description))]
+            ),
             _vm._v("\n            "),
             _c("p", { staticStyle: { "font-weight": "bold" } }, [
               _vm._v(" Quantity: " + _vm._s(_vm.form.quantity))
@@ -21954,7 +21972,9 @@ var render = function() {
             _vm._v("\n        ")
           ])
         ]
-      )
+      ),
+      _vm._v(" "),
+      _vm._m(1)
     ])
   ])
 }
@@ -21966,6 +21986,30 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header" }, [
       _c("h1", { staticClass: "card-header-title is-centered" }, [
         _vm._v("New Ingredient")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("pre", [
+        _vm._v("        "),
+        _c("p", { staticStyle: { "background-color": "orange" } }, [
+          _vm._v("You are now in INSERT-MODE. Every Change made"),
+          _c("br"),
+          _vm._v("here will be written directly to the Database."),
+          _c("br"),
+          _vm._v("Please be careful."),
+          _c("br"),
+          _vm._v("See "),
+          _c("b", [_vm._v("console.log")]),
+          _vm._v(" for"),
+          _c("br"),
+          _vm._v("errors or success")
+        ]),
+        _vm._v("\n    ")
       ])
     ])
   }
@@ -22225,7 +22269,7 @@ var render = function() {
                       click: function($event) {
                         $event.stopPropagation()
                         $event.preventDefault()
-                        return _vm.openRecipeList()
+                        return _vm.openRecipeList(ingredient.recipe_id)
                       }
                     }
                   },
@@ -22627,7 +22671,9 @@ var render = function() {
                   }
                 },
                 [
-                  _c("th", [_vm._v(_vm._s(recipe.id))]),
+                  _c("th", { attrs: { id: recipe.id } }, [
+                    _vm._v(_vm._s(recipe.id))
+                  ]),
                   _vm._v(" "),
                   _c("th", [_vm._v(_vm._s(recipe.description))])
                 ]

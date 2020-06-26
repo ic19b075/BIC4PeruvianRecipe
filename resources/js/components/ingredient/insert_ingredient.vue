@@ -28,7 +28,7 @@
                 <strong>For Recipe:</strong>
                 <br>
                 <select style="font-size:20px" class="form-control" v-model="form.recipe_id">
-                    <option v-for="recipe in recipes" :key="recipe.id" value="recipe.id">{{recipe.name}}</option>
+                    <option v-for="recipe in recipes" :key="recipe.id" v-bind:value="recipe.id">{{recipe.name}}</option>
                 </select>
                 <hr>
                 <button class="block">Submit</button>
@@ -39,12 +39,17 @@
             <pre class="my-pre">
                 <p style="font-size:30px; color:#00b89c; font-weight: bold; text-align:center;">PREVIEW</p>
                 <p style="font-size:18px; text-align:center; font-weight: bold">{{form.name}}</p>
-                <p style="font-size:16px">{{form.description}}</p>
+                <p style="font-size:16px; max-width: 30em">{{form.description}}</p>
                 <p style="font-weight:bold"> Quantity: {{form.quantity}}</p>
                 <p style="font-weight:bold"> Unit: {{form.unit}}</p>
                 <p style="font-weight:bold"> For recipe: {{form.recipe_id}}</p>
                 <p>{{form.id}}</p>
             </pre>
+            </div>
+            <div>
+        <pre>
+            <p style="background-color: orange">You are now in INSERT-MODE. Every Change made</br>here will be written directly to the Database.</br>Please be careful.</br>See <b>console.log</b> for</br>errors or success</p>
+        </pre>
             </div>
         </div>
     </div>

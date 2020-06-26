@@ -10,7 +10,10 @@
                 <strong> Description: </strong>
                 <textarea style="height:50px;width:650px; font-size:15px; background-color:#f1f6f2" cols="90" v-model="ingredient.description"/>
                 <strong> For Recipe: </strong>
-                <input type="number" style="height:35px;width:40px; font-size:18px; background-color:#f1f6f2" class="form-control" v-model="ingredient.recipeId"/>
+                <!---<input type="number" style="height:35px;width:40px; font-size:18px; background-color:#f1f6f2" class="form-control" v-model="ingredient.recipeId"/>-->
+                <select style="font-size:20px" class="form-control" v-model="ingredient.recipeId">
+                    <option v-for="recipe in recipes" :key="recipe.id" v-bind:value="recipe.id">{{recipe.name}}</option>
+                </select>
                 <hr>
                     <button class="block">Submit</button>
             </form>
@@ -20,7 +23,8 @@
                 <pre class="my-pre">
                     <p style="font-size:30px; color:#829247; font-weight: bold; text-align:center;">PREVIEW</p>
                     <p style="font-size:25px; text-align:center; font-weight: bold">{{form.name = ingredient.name}}</p>
-                    <p style="font-size:21px; max-width: 30em">{{form.description = ingredient.description}}</p>
+                    <p style="font-size:25px; text-align:center; font-weight: bold">{{form.slug = ingredient.slug}}</p>
+                                        <p style="font-size:21px; max-width: 30em">{{form.description = ingredient.description}}</p>
                     <p style="font-size:19px; text-align:center; font-weight: bold">Recipe ID: {{form.recipe_id = ingredient.recipeId}}</p>
                 </pre>
             </div>
@@ -49,11 +53,19 @@
         props: ['ingredient'],
         created(){
             console.log("edit_ingredient loaded");
+            axios.get('../list/recipe')
+                .then(response => {
+                    this.recipes = response.data;
+                    console.log("Inhalt recipies");
+                    console.log(this.recipes);
+                })
+                .catch(e => console.log(e));
         },
         data(){
             return{
                 form:form,
-                url:''
+                url:'',
+                recipes:[]
             }
         },
         methods:{

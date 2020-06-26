@@ -2049,6 +2049,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 var form = new Form({
   'slug': '',
   'name': '',
@@ -2062,17 +2066,27 @@ var form = new Form({
   },
   props: ['ingredient'],
   created: function created() {
+    var _this = this;
+
     console.log("edit_ingredient loaded");
+    axios.get('../list/recipe').then(function (response) {
+      _this.recipes = response.data;
+      console.log("Inhalt recipies");
+      console.log(_this.recipes);
+    })["catch"](function (e) {
+      return console.log(e);
+    });
   },
   data: function data() {
     return {
       form: form,
-      url: ''
+      url: '',
+      recipes: []
     };
   },
   methods: {
     submit: function submit() {
-      var _this = this;
+      var _this2 = this;
 
       this.url = '/ingredient/' + form.slug;
       console.log(form.name + " " + form.description + " " + form.recipe_id);
@@ -2081,7 +2095,7 @@ var form = new Form({
         console.log(response);
       })["catch"](function (error) {
         console.log("Errormessage:");
-        console.log(_this.form.failMessage);
+        console.log(_this2.form.failMessage);
       });
     }
   }
@@ -21539,33 +21553,46 @@ var render = function() {
             _vm._v(" "),
             _c("strong", [_vm._v(" For Recipe: ")]),
             _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.ingredient.recipeId,
-                  expression: "ingredient.recipeId"
-                }
-              ],
-              staticClass: "form-control",
-              staticStyle: {
-                height: "35px",
-                width: "40px",
-                "font-size": "18px",
-                "background-color": "#f1f6f2"
-              },
-              attrs: { type: "number" },
-              domProps: { value: _vm.ingredient.recipeId },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ingredient.recipeId,
+                    expression: "ingredient.recipeId"
                   }
-                  _vm.$set(_vm.ingredient, "recipeId", $event.target.value)
+                ],
+                staticClass: "form-control",
+                staticStyle: { "font-size": "20px" },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.$set(
+                      _vm.ingredient,
+                      "recipeId",
+                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                    )
+                  }
                 }
-              }
-            }),
+              },
+              _vm._l(_vm.recipes, function(recipe) {
+                return _c(
+                  "option",
+                  { key: recipe.id, domProps: { value: recipe.id } },
+                  [_vm._v(_vm._s(recipe.name))]
+                )
+              }),
+              0
+            ),
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
@@ -21610,6 +21637,18 @@ var render = function() {
               [_vm._v(_vm._s((_vm.form.name = _vm.ingredient.name)))]
             ),
             _vm._v("\n                "),
+            _c(
+              "p",
+              {
+                staticStyle: {
+                  "font-size": "25px",
+                  "text-align": "center",
+                  "font-weight": "bold"
+                }
+              },
+              [_vm._v(_vm._s((_vm.form.slug = _vm.ingredient.slug)))]
+            ),
+            _vm._v("\n                                    "),
             _c(
               "p",
               { staticStyle: { "font-size": "21px", "max-width": "30em" } },
